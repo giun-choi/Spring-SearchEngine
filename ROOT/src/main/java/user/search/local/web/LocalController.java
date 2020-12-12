@@ -14,7 +14,7 @@ public class LocalController {
 	@RequestMapping("/local")
 	public String getLocal() {
 		
-		logger.info("Áö¿ª iN ÆäÀÌÁö");
+		logger.info("ì§€ì—­ í˜ì´ì§€");
 		return "user/search/local";
 	}
 	

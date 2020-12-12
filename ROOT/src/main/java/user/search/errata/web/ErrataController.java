@@ -14,7 +14,7 @@ public class ErrataController {
 	@RequestMapping("/errata")
 	public String getErrata() {
 		
-		logger.info("��Ÿ��ȯ");
+		logger.info("오타변환 페이지");
 		return "user/search/errata";
 	}
 	

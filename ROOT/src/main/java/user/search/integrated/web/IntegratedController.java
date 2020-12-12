@@ -14,7 +14,7 @@ public class IntegratedController {
 	@RequestMapping("/integrated")
 	public String getIntegrated() {
 		
-		logger.info("ÅëÇÕ ÆäÀÌÁö");
+		logger.info("í†µí•© í˜ì´ì§€");
 		return "user/search/integrated";
 	}
 	

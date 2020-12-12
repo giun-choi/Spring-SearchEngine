@@ -1,23 +1,19 @@
 package user.search.main.web;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- * ¸ŞÀÎ °Ë»ö ÄÁÆ®·Ñ·¯
- * @author bathr
- *
- */
 @Controller
 public class MainController {
 
-	/**
-	 * ¸ŞÀÎ ÆäÀÌÁö
-	 * @return
-	 */
+	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
+	
 	@RequestMapping("/search")
 	public String getMain() {
 		
+		logger.info("ë©”ì¸ í˜ì´ì§€");
 		return "user/search/main";
 	}
 	

@@ -14,7 +14,7 @@ public class WebkrController {
 	@RequestMapping("/webkr")
 	public String getWebkr() {
 		
-		logger.info("À¥¹®¼­ ÆäÀÌÁö");
+		logger.info("ì›¹ë¬¸ì„œ í˜ì´ì§€");
 		return "user/search/webkr";
 	}
 	

@@ -14,7 +14,7 @@ public class BookController {
 	@RequestMapping("/book")
 	public String getBook() {
 		
-		logger.info("Ã¥ ÆäÀÌÁö");
+		logger.info("ì±… í˜ì´ì§€");
 		return "user/search/book";
 	}
 	

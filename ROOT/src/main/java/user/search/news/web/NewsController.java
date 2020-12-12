@@ -14,7 +14,7 @@ public class NewsController {
 	@RequestMapping("/news")
 	public String getNews() {
 		
-		logger.info("´º½º ÆäÀÌÁö");
+		logger.info("ë‰´ìŠ¤ í˜ì´ì§€");
 		return "user/search/news";
 	}
 	

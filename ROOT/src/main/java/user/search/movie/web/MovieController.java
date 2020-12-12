@@ -14,7 +14,7 @@ public class MovieController {
 	@RequestMapping("/movie")
 	public String getMovie() {
 		
-		logger.info("¿µÈ­ ÆäÀÌÁö");
+		logger.info("ì˜í™” í˜ì´ì§€");
 		return "user/search/movie";
 	}
 	

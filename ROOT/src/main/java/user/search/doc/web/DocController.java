@@ -14,7 +14,7 @@ public class DocController {
 	@RequestMapping("/doc")
 	public String getDoc() {
 		
-		logger.info("Àü¹®ÀÚ·á ÆäÀÌÁö");
+		logger.info("ì „ë¬¸ìë£Œ í˜ì´ì§€");
 		return "user/search/doc";
 	}
 	

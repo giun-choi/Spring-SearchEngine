@@ -14,7 +14,7 @@ public class EncycController {
 	@RequestMapping("/encyc")
 	public String getEncyc() {
 		
-		logger.info("¹é°ú»çÀü ÆäÀÌÁö");
+		logger.info("ë°±ê³¼ ì‚¬ì „ í˜ì´ì§€");
 		return "user/search/encyc";
 	}
 	

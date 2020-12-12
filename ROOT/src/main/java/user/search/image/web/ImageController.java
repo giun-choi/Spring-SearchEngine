@@ -14,7 +14,7 @@ public class ImageController {
 	@RequestMapping("/image")
 	public String getImage() {
 		
-		logger.info("ÀÌ¹ÌÁö ÆäÀÌÁö");
+		logger.info("ì´ë¯¸ì§€ í˜ì´ì§€");
 		return "user/search/image";
 	}
 	

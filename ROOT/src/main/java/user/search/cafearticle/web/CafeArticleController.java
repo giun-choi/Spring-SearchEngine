@@ -14,7 +14,7 @@ public class CafeArticleController {
 	@RequestMapping("/cafearticle")
 	public String getCafeArticle() {
 		
-		logger.info("Ä«Æä±Û ÆäÀÌÁö");
+		logger.info("ì¹´í˜ê¸€ í˜ì´ì§€");
 		return "user/search/cafearticle";
 	}
 

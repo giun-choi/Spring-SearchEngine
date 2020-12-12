@@ -14,7 +14,7 @@ public class KinController {
 	@RequestMapping("/kin")
 	public String getKin() {
 		
-		logger.info("Áö½Ä iN ÆäÀÌÁö");
+		logger.info("ì§€ì‹ iN í˜ì´ì§€");
 		return "user/search/kin";
 	}
 

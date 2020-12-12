@@ -14,7 +14,7 @@ public class BlogController {
 	@RequestMapping("/blog")
 	public String getBlog() {
 		
-		logger.info("ºí·Î±× ÆäÀÌÁö");
+		logger.info("ë¸”ë¡œê·¸ í˜ì´ì§€");
 		return "user/search/blog";
 	}
 	

@@ -14,7 +14,7 @@ public class ShopController {
 	@RequestMapping("/shop")
 	public String getShop() {
 		
-		logger.info("¼îÇÎ ÆäÀÌÁö");
+		logger.info("ì‡¼í•‘ í˜ì´ì§€");
 		return "user/search/shop";
 	}
 	
