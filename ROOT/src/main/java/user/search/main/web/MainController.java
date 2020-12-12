@@ -18,7 +18,7 @@ public class MainController {
 	@RequestMapping("/search")
 	public String getMain() {
 		
-		return "main";
+		return "user/search/main";
 	}
 	
 }
