@@ -14,7 +14,7 @@ public class AdultController {
 	@RequestMapping("/adult")
 	public String getAdult() {
 		
-		logger.info("¼ºÀÎ °Ë»ö¾î ÆÇº° ÆäÀÌÁö");
+		logger.info("ì„±ì¸ ê²€ìƒ‰ì–´ íŒë³„ í˜ì´ì§€");
 		return "user/search/adult";
 	}
 
