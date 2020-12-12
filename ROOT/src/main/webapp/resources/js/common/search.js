@@ -18,15 +18,15 @@ function fn_ConvertToQueryString(obj) {
 	
 	return query_string;
 }
-	
+
 function fn_RequestSearchData(api_url, params, callback) {
 	
 	$.ajax({
+		async: true,
 		type: 'POST',
 		url: api_url,
 		data: fn_ConvertToQueryString(params),
-		async: true,
-		timeout: 10000,
+		dataType : 'json',
 		beforeSend: function(b) {
 //			console.log('beforeSend');
 //			console.log(b);

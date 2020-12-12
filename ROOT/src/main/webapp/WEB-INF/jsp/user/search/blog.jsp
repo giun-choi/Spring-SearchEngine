@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/blog/getBlogList';
+		const api_url = '/search/getBlogList';
 		const params = {
 			query : null,
 			display : null,
@@ -21,9 +21,8 @@ $(function() {
 		params.query = '집';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.blogList);
-			
-			console.log(list);
+	
+			console.log(data.adultList);
 		});
 	});
 	

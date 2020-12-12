@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/adult/getAdultList';
+		const api_url = '/search/getAdultList';
 		const params = {
 			query : null
 		};
@@ -18,9 +18,9 @@ $(function() {
 		params.query = '엉덩이';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.adultList);
 			
-			console.log(list);
+			
+			console.log(data.adultList);
 		});
 	});
 	
