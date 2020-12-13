@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/errata/getErrataList';
+		const api_url = '/search/getErrataList';
 		const params = {
 			query : null
 		};
@@ -18,9 +18,8 @@ $(function() {
 		params.query = '산기슥';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.errataList);
 			
-			console.log(list);
+			console.log(data.errata);
 		});
 	});
 	

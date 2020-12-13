@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/doc/getDocList';
+		const api_url = '/search/getDocList';
 		const params = {
 			query : null,
 			display : null,
@@ -20,9 +20,8 @@ $(function() {
 		params.query = '웹개발';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.docList);
 			
-			console.log(list);
+			console.log(data.docList);
 		});
 	});
 	

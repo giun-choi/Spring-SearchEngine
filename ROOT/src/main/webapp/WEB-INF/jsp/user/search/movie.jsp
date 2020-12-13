@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/movie/getMovieList';
+		const api_url = '/search/getMovieList';
 		const params = {
 			query : null,
 			display : null,
@@ -29,9 +29,8 @@ $(function() {
 		params.yearto = '2020';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.movieList);
 			
-			console.log(list);
+			console.log(data.movieList);
 		});
 	});
 	

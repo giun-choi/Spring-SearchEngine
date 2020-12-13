@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/encyc/getEncycList';
+		const api_url = '/search/getEncycList';
 		const params = {
 			query : null,
 			display : null,
@@ -20,9 +20,8 @@ $(function() {
 		params.query = '나무';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.encycList);
 			
-			console.log(list);
+			console.log(data.encycList);
 		});
 	});
 	

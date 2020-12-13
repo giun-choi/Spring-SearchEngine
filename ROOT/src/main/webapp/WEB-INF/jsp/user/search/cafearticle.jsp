@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/cafearticle/getCafeArticleList';
+		const api_url = '/search/getCafeArticleList';
 		const params = {
 			query : null,
 			display : null,
@@ -21,9 +21,8 @@ $(function() {
 		params.query = '커피';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.cafearticleList);
 			
-			console.log(list);
+			console.log(data.cafearticleList);
 		});
 	});
 	

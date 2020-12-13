@@ -8,21 +8,6 @@
 <script type="text/javascript" src="/resources/js/common/search.js"></script>
 <script type="text/javascript">
 $(function() {
-		
-	$('#btn').click(function() {
-		const api_url = '/search/adult/getIntegratedList';
-		const params = {
-			query : null
-		};
-		
-		params.query = '스마트폰';
-				
-		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.adultList);
-			
-			console.log(list);
-		});
-	});
 	
 });
 </script>

@@ -20,7 +20,7 @@ $(function() {
 		fn_RequestSearchData(api_url, params, function(data) {
 			
 			
-			console.log(data.adultList);
+			console.log(data.adult);
 		});
 	});
 	

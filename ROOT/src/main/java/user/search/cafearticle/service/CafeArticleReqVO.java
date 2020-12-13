@@ -1,5 +1,8 @@
 package user.search.cafearticle.service;
 
+import java.lang.reflect.Field;
+import java.util.HashMap;
+
 public class CafeArticleReqVO {
 
 	public String query;
@@ -32,4 +35,22 @@ public class CafeArticleReqVO {
 		this.sort = sort;
 	}
 	
+	public HashMap<String, String> getSearchKeywords() {
+		
+		Field[] fields = this.getClass().getDeclaredFields();
+		HashMap<String, String> query_string = new HashMap<String, String>();
+		
+		for(int i=0; i<fields.length; i++) {
+			
+			try {
+				if((String)fields[i].get(this) != null) {
+					query_string.put(fields[i].getName(), (String)fields[i].get(this));	
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return query_string;
+	}
 }

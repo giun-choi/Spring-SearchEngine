@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/book/getBookList';
+		const api_url = '/search/getBookList';
 		const params = {
 			query : null,
 			display : null,
@@ -29,9 +29,8 @@ $(function() {
 		params.query = '그물망 공부법';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.bookList);
 			
-			console.log(list);
+			console.log(data.bookList);
 		});
 	});
 	

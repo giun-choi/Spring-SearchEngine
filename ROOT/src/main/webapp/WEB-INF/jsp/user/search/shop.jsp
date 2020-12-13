@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/shop/getShopList';
+		const api_url = '/search/getShopList';
 		const params = {
 			query : null,
 			display : null,
@@ -21,9 +21,8 @@ $(function() {
 		params.query = '맛집';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.shopList);
 			
-			console.log(list);
+			console.log(data.shopList);
 		});
 	});
 	

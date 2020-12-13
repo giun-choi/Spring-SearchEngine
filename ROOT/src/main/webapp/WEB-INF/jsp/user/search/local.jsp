@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/local/getLocalList';
+		const api_url = '/search/getLocalList';
 		const params = {
 			query : null,
 			display : null,
@@ -21,9 +21,8 @@ $(function() {
 		params.query = '부산';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.localList);
 			
-			console.log(list);
+			console.log(data.localList);
 		});
 	});
 	

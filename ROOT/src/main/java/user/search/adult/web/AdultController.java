@@ -41,8 +41,6 @@ public class AdultController {
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject)parser.parse(searchInfo);
 		
-		
-		
 		mv.addObject("adult", json.get("adult"));
 		mv.setViewName("JsonView");
 		

@@ -1,3 +1,5 @@
+'use strict'
+
 function fn_ConvertToQueryString(obj) {
 		
 	let query_string = '';

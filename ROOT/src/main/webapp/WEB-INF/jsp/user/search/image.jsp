@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/image/getImageList';
+		const api_url = '/search/getImageList';
 		const params = {
 			query : null,
 			display : null,
@@ -22,9 +22,8 @@ $(function() {
 		params.query = '고양이';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.imageList);
 			
-			console.log(list);
+			console.log(data.imageList);
 		});
 	});
 	

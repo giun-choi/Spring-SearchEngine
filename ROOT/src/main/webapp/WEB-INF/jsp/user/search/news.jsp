@@ -10,7 +10,7 @@
 $(function() {
 		
 	$('#btn').click(function() {
-		const api_url = '/search/news/getNewsList';
+		const api_url = '/search/getNewsList';
 		const params = {
 			query : null,
 			display : null,
@@ -21,9 +21,8 @@ $(function() {
 		params.query = '비트코인';
 				
 		fn_RequestSearchData(api_url, params, function(data) {
-			const list = JSON.parse(data.newsList);
 			
-			console.log(list);
+			console.log(data.newsList);
 		});
 	});
 	

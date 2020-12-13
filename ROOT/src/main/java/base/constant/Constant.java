@@ -18,5 +18,7 @@ public class Constant {
 	public static String IMAGE_API_URL = "https://openapi.naver.com/v1/search/image"; //이미지 검색 API
 	public static String SHOP_API_URL = "https://openapi.naver.com/v1/search/shop"; //쇼핑 검색 API
 	public static String DOC_API_URL = "https://openapi.naver.com/v1/search/doc"; //전문자료 검색 API
+	public static String BOOK_API_URL = "https://openapi.naver.com/v1/search/book"; //책 검색 API
+	
 	
 }
