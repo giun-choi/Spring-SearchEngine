@@ -13,7 +13,7 @@
 }
 .logo{
 	margin-bottom: 40px;
-	color: green;
+	color: #5cb85c;
 }
 .dropdown.dropdown-lg .dropdown-menu {
     margin-top: -1px;
