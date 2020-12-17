@@ -21,10 +21,15 @@ public class ErrataController {
 	private static final Logger logger = LoggerFactory.getLogger(ErrataController.class);
 
 	@RequestMapping("/errata")
-	public String getErrata() {
+	public ModelAndView getErrata() {
+		
+		ModelAndView mv = new ModelAndView();
 		
 		logger.info("오타변환 페이지");
-		return "user/search/errata";
+		
+		mv.addObject("page", "errata");
+		mv.setViewName("user/search/errata");
+		return mv;
 	}
 	
 	@RequestMapping("/getErrataList")

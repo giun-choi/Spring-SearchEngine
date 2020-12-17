@@ -21,10 +21,15 @@ public class DocController {
 	private static final Logger logger = LoggerFactory.getLogger(DocController.class);
 	
 	@RequestMapping("/doc")
-	public String getDoc() {
+	public ModelAndView getDoc() {
+		
+		ModelAndView mv = new ModelAndView();
 		
 		logger.info("전문자료 페이지");
-		return "user/search/doc";
+		
+		mv.addObject("page", "doc");
+		mv.setViewName("user/search/doc");
+		return mv;
 	}
 	
 	@RequestMapping("/getDocList")

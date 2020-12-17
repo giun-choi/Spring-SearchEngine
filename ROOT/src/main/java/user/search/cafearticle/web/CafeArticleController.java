@@ -21,10 +21,15 @@ public class CafeArticleController {
 	private static final Logger logger = LoggerFactory.getLogger(CafeArticleController.class);
 	
 	@RequestMapping("/cafearticle")
-	public String getCafeArticle() {
+	public ModelAndView getCafeArticle() {
+		
+		ModelAndView mv = new ModelAndView();
 		
 		logger.info("카페글 페이지");
-		return "user/search/cafearticle";
+		
+		mv.addObject("page", "cafearticle");
+		mv.setViewName("user/search/cafearticle");
+		return mv;
 	}
 	
 	@RequestMapping("/getCafeArticleList")

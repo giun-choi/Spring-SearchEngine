@@ -21,10 +21,15 @@ public class KinController {
 	private static final Logger logger = LoggerFactory.getLogger(KinController.class);
 	
 	@RequestMapping("/kin")
-	public String getKin() {
+	public ModelAndView getKin() {
+		
+		ModelAndView mv = new ModelAndView();
 		
 		logger.info("지식 iN 페이지");
-		return "user/search/kin";
+		
+		mv.addObject("page", "kin");
+		mv.setViewName("user/search/kin");
+		return mv;
 	}
 
 	@RequestMapping("/getKinList")

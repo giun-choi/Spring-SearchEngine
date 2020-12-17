@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function fn_ConvertToQueryString(obj) {
 		
@@ -25,7 +25,7 @@ function fn_RequestSearchData(api_url, params, callback) {
 	
 	$.ajax({
 		async: true,
-		type: 'POST',
+		type: 'GET',
 		url: api_url,
 		data: fn_ConvertToQueryString(params),
 		dataType : 'json',

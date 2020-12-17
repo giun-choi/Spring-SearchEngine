@@ -21,10 +21,15 @@ public class ShopController {
 	private static final Logger logger = LoggerFactory.getLogger(ShopController.class);
 	
 	@RequestMapping("/shop")
-	public String getShop() {
+	public ModelAndView getShop() {
+		
+		ModelAndView mv = new ModelAndView();
 		
 		logger.info("쇼핑 페이지");
-		return "user/search/shop";
+		
+		mv.addObject("page", "shop");
+		mv.setViewName("user/search/shop");
+		return mv;
 	}
 	
 	@RequestMapping("/getShopList")

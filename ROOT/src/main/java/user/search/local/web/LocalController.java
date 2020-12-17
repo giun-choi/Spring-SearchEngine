@@ -21,10 +21,15 @@ public class LocalController {
 	private static final Logger logger = LoggerFactory.getLogger(LocalController.class);
 	
 	@RequestMapping("/local")
-	public String getLocal() {
+	public ModelAndView getLocal() {
+		
+		ModelAndView mv = new ModelAndView();
 		
 		logger.info("지역 페이지");
-		return "user/search/local";
+		
+		mv.addObject("page", "local");
+		mv.setViewName("user/search/local");
+		return mv;
 	}
 	
 	@RequestMapping("/getLocalList")

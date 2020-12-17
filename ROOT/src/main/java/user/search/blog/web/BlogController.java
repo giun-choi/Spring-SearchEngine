@@ -21,10 +21,15 @@ public class BlogController {
 	private static final Logger logger = LoggerFactory.getLogger(BlogController.class);
 
 	@RequestMapping("/blog")
-	public String getBlog() {
+	public ModelAndView getBlog() {
+		
+		ModelAndView mv = new ModelAndView();
 		
 		logger.info("블로그 페이지");
-		return "user/search/blog";
+		
+		mv.addObject("page", "blog");
+		mv.setViewName("user/search/blog");
+		return mv;
 	}
 	
 	@RequestMapping("/getBlogList")

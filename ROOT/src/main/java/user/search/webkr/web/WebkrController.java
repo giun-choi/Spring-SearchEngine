@@ -21,10 +21,15 @@ public class WebkrController {
 	private static final Logger logger = LoggerFactory.getLogger(WebkrController.class);
 	
 	@RequestMapping("/webkr")
-	public String getWebkr() {
+	public ModelAndView getWebkr() {
+		
+		ModelAndView mv = new ModelAndView();
 		
 		logger.info("웹문서 페이지");
-		return "user/search/webkr";
+		
+		mv.addObject("page", "webkr");
+		mv.setViewName("user/search/webkr");
+		return mv;
 	}
 	
 	@RequestMapping("/getWebkrList")

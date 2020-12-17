@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/* 헤더영역 */
+.header {
+	margin-top: 20px;
+}
+.logo {
+	height: 34px;
+	font-size: x-large;
+	color: #5cb85c;
+	font-weight: bold;
+}
+.wrap-logo, .wrap-search {
+	padding: 10px;
+}
+.dropdown.dropdown-lg .dropdown-menu {
+    margin-top: -1px;
+    padding: 6px 20px;
+}
+.input-group-btn .btn-group {
+    display: flex !important;
+}
+.btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.btn-group .form-horizontal .search-btn-sub {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+.form-group .form-control:last-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+/* pc */
+@media screen and (min-width: 768px) {
+
+	/* 헤더영역 */
+    #adv-search {
+        width: 500px;
+    }
+    .dropdown.dropdown-lg {
+        position: static !important;
+    }
+    .dropdown.dropdown-lg .dropdown-menu {
+        min-width: 500px;
+    }
+    
+    /* 섹션영역 */
+    .m-menu {
+    	display: none;
+    }
+    .p-menu-tab li a {
+    	color: black;
+    }
+	.p-menu-tab .active a {
+		background-color: #5cb85c !important;
+	}
+	
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+
+	/* 헤더영역 */
+    #adv-search {
+        width: 332px;
+    }
+    .dropdown.dropdown-lg {
+        position: static !important;
+    }
+    .dropdown.dropdown-lg .dropdown-menu {
+        min-width: 332px;
+    }
+    
+    /* 섹션영역 */
+    .blank {
+    	display: none;
+    }
+    .p-menu {
+    	display: none;
+    }
+    .m-menu {
+    	padding-left: 10px;
+    	padding-right: 10px;
+    	padding-bottom: 0px !important;
+    }
+    .m-menu-tab {
+		width: 332px;
+		position: static !important;
+		min-width: 332px;
+		white-space: nowrap;
+		overflow-x: auto;
+		padding-bottom: 10px;
+	}
+	.m-menu-tab li {
+		display: inline-block;
+        float: none;
+	}
+	.m-menu-tab li a {
+		color: black;
+	}
+	
+	.m-menu-tab .active a {
+		background-color: #5cb85c !important;
+	}
+	
+}

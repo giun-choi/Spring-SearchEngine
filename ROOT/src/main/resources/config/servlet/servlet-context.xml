@@ -20,17 +20,40 @@
 	<resources mapping="/js/**" location="/resources/js/" />
 	<resources mapping="/fonts/**" location="/resources/fonts/" />
 
+	<!-- JsonView -->
 	<beans:bean id="JsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
 		<beans:property name="contentType" value="application/json;charset=UTF-8"/>
 	</beans:bean>
 	
+	<!-- Distinguishing JSP and JSON -->
 	<beans:bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0"/>
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/jsp directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/jsp/" />
-		<beans:property name="suffix" value=".jsp" />
+	<!-- Tiles -->
+	<beans:bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<beans:property name="viewClass">
+			<beans:value>
+				org.springframework.web.servlet.view.tiles3.TilesView
+			</beans:value>
+		</beans:property>
+		<beans:property name="order" value="1"/>
 	</beans:bean>
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/jsp directory -->
+	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/jsp/" />
+		<beans:property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="order" value="2"/>
+	</beans:bean>
+	
+	<!-- Tiles configuration -->
+	<beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+	    <beans:property name="definitions">
+	        <beans:list>
+	            <beans:value>classpath*:config/tiles/tiles-*.xml</beans:value>
+	        </beans:list>
+	    </beans:property>
+	</beans:bean>	
 	
 	<context:component-scan base-package="base" />
 	<context:component-scan base-package="user" />

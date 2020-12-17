@@ -21,10 +21,15 @@ public class NewsController {
 	private static final Logger logger = LoggerFactory.getLogger(NewsController.class);
 	
 	@RequestMapping("/news")
-	public String getNews() {
+	public ModelAndView getNews() {
+		
+		ModelAndView mv = new ModelAndView();
 		
 		logger.info("뉴스 페이지");
-		return "user/search/news";
+		
+		mv.addObject("page", "news");
+		mv.setViewName("user/search/news");
+		return mv;
 	}
 	
 	@RequestMapping("/getNewsList")
