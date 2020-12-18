@@ -70,6 +70,10 @@
 		cursor: pointer;
 	}
 	
+	/* 검색결과 영역 */
+	.contents-menu {
+		padding: 20px 85px 10px 0px;
+	}
 }
 
 /* mobile */
@@ -77,13 +81,13 @@
 
 	/* 헤더영역 */
     #adv-search {
-        width: 332px;
+        width: 340px;
     }
     .dropdown.dropdown-lg {
         position: static !important;
     }
     .dropdown.dropdown-lg .dropdown-menu {
-        min-width: 332px;
+        min-width: 340px;
     }
     
     /* 섹션영역 */
@@ -99,9 +103,9 @@
     	padding-bottom: 0px !important;
     }
     .m-menu-tab {
-		width: 332px;
+		width: 340px;
 		position: static !important;
-		min-width: 332px;
+		min-width: 340px;
 		white-space: nowrap;
 		overflow-x: auto;
 		padding-bottom: 10px;
@@ -121,4 +125,32 @@
 	.m-menu-tab .page {
 		cursor: pointer;
 	}
+	
+	/* 검색결과 영역 */
+	.contents-menu {
+		padding: 20px 10px 10px 10px;
+	}
+	.contents-menu .description {
+		word-break: break-all;
+	}
+	
+}
+
+/* 지식 iN */
+.contents-menu .title {
+	font-size: medium;
+}
+
+/* 블로그 */
+.blog a {
+	color: black;
+}
+
+.blog-body p a {
+	font-size: larger;
+}
+
+.blog-body hr {
+	background-color: #5cb85c;
+	border: 1px solid #5cb85c;
 }

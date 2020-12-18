@@ -10,7 +10,7 @@ $(function() {
 		start : null,
 		sort : null
 	};
-	params.query = sessionStorage.getItem('q');
+	params.query = '${query}';
 
 	api_url = '/search/getKinList';
 	fn_requestSearchData(api_url, params, function(data) {

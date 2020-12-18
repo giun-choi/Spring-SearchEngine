@@ -57,10 +57,10 @@ function fn_queryCheck(query) {
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">경고!</h4>
+				<h4 class="modal-title">경고</h4>
 			</div>
 			<div class="modal-body">
-				<p>검색어를 입력해주세요.</p>
+				<p>검색어를 입력해주세요</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
