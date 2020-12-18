@@ -59,20 +59,7 @@ function fn_dateFomat(str) {
 			<!-- 로고 밑에 공백 -->
 		</div>
 		<div id="contents-menu" class="col-sm-6 contents-menu">
-			<div class="panel panel-success blog">
-				<div class="panel-heading">
-					<p><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;<b>2020-12-15</b></p>
-					<span class="glyphicon glyphicon-share-alt"></span>
-					<a href="https://blog.naver.com/keroann" target="_blank">꿈꾸는 그곳!! 내가 만들어보자!!</a>
-				</div>
-				<div class="panel-body blog-body">
-					<p><a href="https://blog.naver.com/keroann?Redirect=Log&logNo=222174678752" target="_blank"><b>감자</b>튀김 만드는법 제대로 튀겨야 감튀지</a></p>
-					<hr />
-					<a href="https://blog.naver.com/keroann?Redirect=Log&logNo=222174678752" target="_blank">
-						싶어 집안에 재료를 찾아보니 <b>감자</b>가 있길래 감튀했죠 낮이고 일하고 있어서 시원한 걸 곁들여 먹을 수 없어 아쉬움이 어찌나 크던지요~ <b>감자</b>튀김 만드는법 쉬우니 다음에
-					</a>
-				</div>
-			</div>
+			<!-- 블로그 검색 내용 -->
 		</div>
 	</div>
 </div>

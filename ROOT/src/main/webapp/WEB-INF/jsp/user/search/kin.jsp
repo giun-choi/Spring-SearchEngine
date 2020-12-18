@@ -40,7 +40,7 @@ function fn_createTag(tagInfo) {
 			<!-- 로고 밑에 공백 -->
 		</div>
 		<div id="contents-menu" class="col-sm-6 contents-menu">
-			<!-- 검색 결과 내용 -->
+			<!-- 지식 iN 검색 내용 -->
 		</div>
 	</div>
 </div>
