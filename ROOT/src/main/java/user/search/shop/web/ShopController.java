@@ -21,13 +21,14 @@ public class ShopController {
 	private static final Logger logger = LoggerFactory.getLogger(ShopController.class);
 	
 	@RequestMapping("/shop")
-	public ModelAndView getShop() {
+	public ModelAndView getShop(ShopReqVO shopReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("쇼핑 페이지");
 		
 		mv.addObject("page", "shop");
+		mv.addObject("query", shopReqVO.getQuery());
 		mv.setViewName("user/search/shop");
 		return mv;
 	}

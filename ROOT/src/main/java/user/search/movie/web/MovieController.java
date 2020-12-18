@@ -21,13 +21,14 @@ public class MovieController {
 	private static final Logger logger = LoggerFactory.getLogger(MovieController.class);
 	
 	@RequestMapping("/movie")
-	public ModelAndView getMovie() {
+	public ModelAndView getMovie(MovieReqVO movieReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("영화 페이지");
 		
 		mv.addObject("page", "movie");
+		mv.addObject("query", movieReqVO.getQuery());
 		mv.setViewName("user/search/movie");
 		return mv;
 	}

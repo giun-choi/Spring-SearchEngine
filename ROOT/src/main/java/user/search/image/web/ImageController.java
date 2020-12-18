@@ -21,13 +21,14 @@ public class ImageController {
 	private static final Logger logger = LoggerFactory.getLogger(ImageController.class);
 	
 	@RequestMapping("/image")
-	public ModelAndView getImage() {
+	public ModelAndView getImage(ImageReqVO imageReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("이미지 페이지");
 		
 		mv.addObject("page", "image");
+		mv.addObject("query", imageReqVO.getQuery());
 		mv.setViewName("user/search/image");
 		return mv;
 	}

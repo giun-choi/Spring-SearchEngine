@@ -21,13 +21,14 @@ public class BookController {
 	private static final Logger logger = LoggerFactory.getLogger(BookController.class);
 	
 	@RequestMapping("/book")
-	public ModelAndView getBook() {
+	public ModelAndView getBook(BookReqVO bookReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("책 페이지");
 		
 		mv.addObject("page", "book");
+		mv.addObject("query", bookReqVO.getQuery());
 		mv.setViewName("user/search/book");
 		return mv;
 	}

@@ -21,13 +21,14 @@ public class KinController {
 	private static final Logger logger = LoggerFactory.getLogger(KinController.class);
 	
 	@RequestMapping("/kin")
-	public ModelAndView getKin() {
+	public ModelAndView getKin(KinReqVO kinReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("지식 iN 페이지");
 		
 		mv.addObject("page", "kin");
+		mv.addObject("query", kinReqVO.getQuery());
 		mv.setViewName("user/search/kin");
 		return mv;
 	}

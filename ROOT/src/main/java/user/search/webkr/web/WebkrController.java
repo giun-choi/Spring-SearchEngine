@@ -21,13 +21,14 @@ public class WebkrController {
 	private static final Logger logger = LoggerFactory.getLogger(WebkrController.class);
 	
 	@RequestMapping("/webkr")
-	public ModelAndView getWebkr() {
+	public ModelAndView getWebkr(WebkrReqVO webkrReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("웹문서 페이지");
 		
 		mv.addObject("page", "webkr");
+		mv.addObject("query", webkrReqVO.getQuery());
 		mv.setViewName("user/search/webkr");
 		return mv;
 	}

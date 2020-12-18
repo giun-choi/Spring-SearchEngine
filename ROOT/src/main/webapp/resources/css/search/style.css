@@ -64,6 +64,10 @@
     }
 	.p-menu-tab .active a {
 		background-color: #5cb85c !important;
+		cursor: pointer;
+	}
+	.p-menu-tab .page {
+		cursor: pointer;
 	}
 	
 }
@@ -112,6 +116,9 @@
 	
 	.m-menu-tab .active a {
 		background-color: #5cb85c !important;
+		cursor: pointer;
 	}
-	
+	.m-menu-tab .page {
+		cursor: pointer;
+	}
 }

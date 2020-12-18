@@ -21,13 +21,14 @@ public class LocalController {
 	private static final Logger logger = LoggerFactory.getLogger(LocalController.class);
 	
 	@RequestMapping("/local")
-	public ModelAndView getLocal() {
+	public ModelAndView getLocal(LocalReqVO localReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("지역 페이지");
 		
 		mv.addObject("page", "local");
+		mv.addObject("query", localReqVO.getQuery());
 		mv.setViewName("user/search/local");
 		return mv;
 	}

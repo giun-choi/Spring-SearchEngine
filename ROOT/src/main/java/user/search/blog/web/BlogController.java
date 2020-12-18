@@ -21,13 +21,14 @@ public class BlogController {
 	private static final Logger logger = LoggerFactory.getLogger(BlogController.class);
 
 	@RequestMapping("/blog")
-	public ModelAndView getBlog() {
+	public ModelAndView getBlog(BlogReqVO blogReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("블로그 페이지");
 		
 		mv.addObject("page", "blog");
+		mv.addObject("query", blogReqVO.getQuery());
 		mv.setViewName("user/search/blog");
 		return mv;
 	}
@@ -46,7 +47,7 @@ public class BlogController {
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject)parser.parse(searchInfo);
 		
-		mv.addObject("adultList", json.get("items"));
+		mv.addObject("blogList", json.get("items"));
 		mv.setViewName("JsonView");
 		
 		return mv;

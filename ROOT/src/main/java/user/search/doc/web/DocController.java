@@ -21,13 +21,14 @@ public class DocController {
 	private static final Logger logger = LoggerFactory.getLogger(DocController.class);
 	
 	@RequestMapping("/doc")
-	public ModelAndView getDoc() {
+	public ModelAndView getDoc(DocReqVO docReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("전문자료 페이지");
 		
 		mv.addObject("page", "doc");
+		mv.addObject("query", docReqVO.getQuery());
 		mv.setViewName("user/search/doc");
 		return mv;
 	}

@@ -21,13 +21,14 @@ public class EncycController {
 	private static final Logger logger = LoggerFactory.getLogger(EncycController.class);
 	
 	@RequestMapping("/encyc")
-	public ModelAndView getEncyc() {
+	public ModelAndView getEncyc(EncycReqVO encycReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("백과 사전 페이지");
 		
 		mv.addObject("page", "encyc");
+		mv.addObject("query", encycReqVO.getQuery());
 		mv.setViewName("user/search/encyc");
 		return mv;
 	}

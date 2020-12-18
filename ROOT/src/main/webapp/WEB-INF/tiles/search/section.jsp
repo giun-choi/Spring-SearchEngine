@@ -3,9 +3,14 @@
 <script type="text/javascript">
 $(function() {
 	
-	const page = '${page}';
-	fn_pcSelectMenu(page, '.p-menu-tab li');
-	fn_mobileSelectMenu(page, '.m-menu-tab li');
+	$('.page').click(function(event) {
+		
+		const selectedPage = $(event.currentTarget).data('page');
+		window.location.href = '/search/' + selectedPage + '?query=' + '${query}';
+	});
+	
+	fn_pcSelectMenu('${page}', '.p-menu-tab li');
+	fn_mobileSelectMenu('${page}', '.m-menu-tab li');
 });
 
 function fn_pcSelectMenu(page, selector) {
@@ -20,15 +25,12 @@ function fn_pcSelectMenu(page, selector) {
 		if(index > 6 && page === $(element).data('page')) {
 			
 			const data_page = $(tagList[5]).data('page');
-			const href = $(tagList[5]).children('a').attr('href');
 			const text = $(tagList[5]).children('a').text();
 			
 			$(tagList[5]).data('page', $(element).data('page'));
-			$(tagList[5]).children('a').attr('href', $(element).children('a').attr('href'));
 			$(tagList[5]).children('a').html($(element).children('a').text());
 			
 			$(element).data('page', data_page);
-			$(element).children('a').attr('href', href);
 			$(element).children('a').html(text);
 			
 			$(tagList[5]).addClass('active');
@@ -58,8 +60,6 @@ function fn_tagList(selector) {
 	});
 	return tagList;
 }
-
-
 </script>
 
 <div class="container section">
@@ -69,45 +69,45 @@ function fn_tagList(selector) {
 		</div>
 		<div class="p-menu">
 			<ul class="nav nav-pills p-menu-tab">
-				<li role="presentation" data-page="integrated"><a href="/search/integrated">전체</a></li>
-				<li role="presentation" data-page="kin"><a href="/search/kin">지식 iN</a></li>
-				<li role="presentation" data-page="blog"><a href="/search/blog">블로그</a></li>
-				<li role="presentation" data-page="cafearticle"><a href="/search/cafearticle">카페글</a></li>
-				<li role="presentation" data-page="image"><a href="/search/image">이미지</a></li>
-				<li role="presentation" data-page="news"><a href="/search/news">뉴스</a></li>
+				<li class="page" role="presentation" data-page="integrated"><a>전체</a></li>
+				<li class="page" role="presentation" data-page="kin"><a>지식 iN</a></li>
+				<li class="page" role="presentation" data-page="blog"><a>블로그</a></li>
+				<li class="page" role="presentation" data-page="cafearticle"><a>카페글</a></li>
+				<li class="page" role="presentation" data-page="image"><a>이미지</a></li>
+				<li class="page" role="presentation" data-page="news"><a>뉴스</a></li>
 				<li role="presentation" class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false"> 
 						더보기 <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu" role="menu">
-						<li role="presentation" data-page="shop"><a href="/search/shop">쇼핑</a></li>
-						<li role="presentation" data-page="book"><a href="/search/book">책</a></li>
-						<li role="presentation" data-page="movie"><a href="/search/movie">영화</a></li>
-						<li role="presentation" data-page="local"><a href="/search/local">지역</a></li>
-						<li role="presentation" data-page="errata"><a href="/search/errata">오타변환</a></li>
-						<li role="presentation" data-page="encyc"><a href="/search/encyc">백과사전</a></li>
-						<li role="presentation" data-page="webkr"><a href="/search/webkr">웹문서</a></li>
-						<li role="presentation" data-page="doc"><a href="/search/doc">전문자료</a></li>
+						<li class="page" role="presentation" data-page="shop"><a>쇼핑</a></li>
+						<li class="page" role="presentation" data-page="book"><a>책</a></li>
+						<li class="page" role="presentation" data-page="movie"><a>영화</a></li>
+						<li class="page" role="presentation" data-page="local"><a>지역</a></li>
+						<li class="page" role="presentation" data-page="errata"><a>오타변환</a></li>
+						<li class="page" role="presentation" data-page="encyc"><a>백과사전</a></li>
+						<li class="page" role="presentation" data-page="webkr"><a>웹문서</a></li>
+						<li class="page" role="presentation" data-page="doc"><a>전문자료</a></li>
 					</ul>
 				</li>
 			</ul>
 		</div>
 		<div class="m-menu">
 			<ul class="nav nav-pills m-menu-tab">
-				<li role="presentation" data-page="integrated"><a href="/search/integrated">전체</a></li>
-				<li role="presentation" data-page="kin"><a href="/search/kin">지식 iN</a></li>
-				<li role="presentation" data-page="blog"><a href="/search/blog">블로그</a></li>
-				<li role="presentation" data-page="cafearticle"><a href="/search/cafearticle">카페글</a></li>
-				<li role="presentation" data-page="image"><a href="/search/image">이미지</a></li>
-				<li role="presentation" data-page="news"><a href="/search/news">뉴스</a></li>
-				<li role="presentation" data-page="shop"><a href="/search/shop">쇼핑</a></li>
-				<li role="presentation" data-page="book"><a href="/search/book">책</a></li>
-				<li role="presentation" data-page="movie"><a href="/search/movie">영화</a></li>
-				<li role="presentation" data-page="local"><a href="/search/local">지역</a></li>
-				<li role="presentation" data-page="errata"><a href="/search/errata">오타변환</a></li>
-				<li role="presentation" data-page="encyc"><a href="/search/encyc">백과사전</a></li>
-				<li role="presentation" data-page="webkr"><a href="/search/webkr">웹문서</a></li>
-				<li role="presentation" data-page="doc"><a href="/search/doc">전문자료</a></li>
+				<li class="page" role="presentation" data-page="integrated"><a>전체</a></li>
+				<li class="page" role="presentation" data-page="kin"><a>지식 iN</a></li>
+				<li class="page" role="presentation" data-page="blog"><a>블로그</a></li>
+				<li class="page" role="presentation" data-page="cafearticle"><a>카페글</a></li>
+				<li class="page" role="presentation" data-page="image"><a>이미지</a></li>
+				<li class="page" role="presentation" data-page="news"><a>뉴스</a></li>
+				<li class="page" role="presentation" data-page="shop"><a>쇼핑</a></li>
+				<li class="page" role="presentation" data-page="book"><a>책</a></li>
+				<li class="page" role="presentation" data-page="movie"><a>영화</a></li>
+				<li class="page" role="presentation" data-page="local"><a>지역</a></li>
+				<li class="page" role="presentation" data-page="errata"><a>오타변환</a></li>
+				<li class="page" role="presentation" data-page="encyc"><a>백과사전</a></li>
+				<li class="page" role="presentation" data-page="webkr"><a>웹문서</a></li>
+				<li class="page" role="presentation" data-page="doc"><a>전문자료</a></li>
 			</ul>
 		</div>
 	</div>

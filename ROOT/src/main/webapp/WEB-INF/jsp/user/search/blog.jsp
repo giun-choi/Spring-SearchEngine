@@ -3,22 +3,24 @@
 <script type="text/javascript">
 $(function() {
 		
-	$('#btn').click(function() {
-		const api_url = '/search/getBlogList';
-		const params = {
-			query : null,
-			display : null,
-			start : null,
-			sort : null
-		};
-		
-		params.query = '집';
-				
-		fn_RequestSearchData(api_url, params, function(data) {
-	
-			console.log(data.adultList);
-		});
+	const api_url = '/search/getBlogList';
+	const params = {
+		query : sessionStorage.getItem('search_word'),
+		display : null,
+		start : null,
+		sort : null
+	};
+	params.query = sessionStorage.getItem('search_word');
+			
+	fn_requestSearchData(api_url, params, function(data) {
+
+		console.log(data.adultList);
 	});
+	
 	
 });
 </script>
+
+<div class="container contents">
+	
+</div>

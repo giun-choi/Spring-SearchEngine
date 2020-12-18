@@ -1,6 +1,6 @@
 'use strict';
 
-function fn_ConvertToQueryString(obj) {
+function fn_convertToQueryString(obj) {
 		
 	let query_string = '';
 	let flag = true;
@@ -21,13 +21,13 @@ function fn_ConvertToQueryString(obj) {
 	return query_string;
 }
 
-function fn_RequestSearchData(api_url, params, callback) {
+function fn_requestSearchData(api_url, params, callback) {
 	
 	$.ajax({
 		async: true,
-		type: 'GET',
+		type: 'POST',
 		url: api_url,
-		data: fn_ConvertToQueryString(params),
+		data: fn_convertToQueryString(params),
 		dataType : 'json',
 		beforeSend: function(b) {
 //			console.log('beforeSend');

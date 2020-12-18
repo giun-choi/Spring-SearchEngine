@@ -21,13 +21,14 @@ public class NewsController {
 	private static final Logger logger = LoggerFactory.getLogger(NewsController.class);
 	
 	@RequestMapping("/news")
-	public ModelAndView getNews() {
+	public ModelAndView getNews(NewsReqVO newsReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("뉴스 페이지");
 		
 		mv.addObject("page", "news");
+		mv.addObject("query", newsReqVO.getQuery());
 		mv.setViewName("user/search/news");
 		return mv;
 	}

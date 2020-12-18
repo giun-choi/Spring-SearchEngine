@@ -21,13 +21,14 @@ public class CafeArticleController {
 	private static final Logger logger = LoggerFactory.getLogger(CafeArticleController.class);
 	
 	@RequestMapping("/cafearticle")
-	public ModelAndView getCafeArticle() {
+	public ModelAndView getCafeArticle(CafeArticleReqVO cafearticleReqVO) {
 		
 		ModelAndView mv = new ModelAndView();
 		
 		logger.info("카페글 페이지");
 		
 		mv.addObject("page", "cafearticle");
+		mv.addObject("query", cafearticleReqVO.getQuery());
 		mv.setViewName("user/search/cafearticle");
 		return mv;
 	}
