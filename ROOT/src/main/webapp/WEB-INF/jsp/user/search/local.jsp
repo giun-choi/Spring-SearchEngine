@@ -12,11 +12,16 @@ $(function() {
 			sort : null
 		};
 		
-		params.query = '부산';
+		params.query = '${query}';
 				
-		fn_RequestSearchData(api_url, params, function(data) {
+		fn_requestSearchData(api_url, params, function(data) {
 			
-			console.log(data.localList);
+			$('#contents-menu').html('');
+			$.each(data.localList, function(index, item) {
+				
+				//$('#contents-menu').append(fn_createTag(item));
+				console.log(item);
+			});
 		});
 	});
 	

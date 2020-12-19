@@ -15,31 +15,63 @@ $(function() {
 	api_url = '/search/getKinList';
 	fn_requestSearchData(api_url, params, function(data) {
 
-		console.log(data.kinList);
+		$.each(data.kinList, function(index, item) {
+			
+			if(index < 3) {
+				console.log(item);
+			}
+		});
 	});	
 	
 	api_url = '/search/getBlogList';
 	fn_requestSearchData(api_url, params, function(data) {
 
-		console.log(data.blogList);
+		$.each(data.blogList, function(index, item) {
+			if(index < 3) {
+				console.log(item);
+			}
+		});
 	});	
 	
 	api_url = '/search/getCafeArticleList';
 	fn_requestSearchData(api_url, params, function(data) {
 
-		console.log(data.cafearticleList);
+		$.each(data.cafearticleList, function(index, item) {
+			if(index < 3) {
+				console.log(item);
+			}
+		});
 	});	
 	
 	api_url = '/search/getImageList';
 	fn_requestSearchData(api_url, params, function(data) {
 
-		console.log(data.imageList);
+		$.each(data.imageList, function(index, item) {
+			if(index < 3) {
+				console.log(item);
+			}
+		});
 	});	
 	
 	api_url = '/search/getNewsList';
 	fn_requestSearchData(api_url, params, function(data) {
 
-		console.log(data.newsList);
+		$.each(data.kinList, function(index, item) {
+			if(index < 3) {
+				console.log(item);
+			}
+		});
 	});	
 });
 </script>
+
+<div class="container contents">
+	<div class="row">
+		<div class="col-sm-2">
+			<!-- 로고 밑에 공백 -->
+		</div>
+		<div id="contents-menu" class="col-sm-6 contents-menu">
+			<!-- 블로그 검색 내용 -->
+		</div>
+	</div>
+</div>

@@ -130,10 +130,11 @@
 	.contents-menu {
 		padding: 20px 10px 10px 10px;
 	}
-	.contents-menu .description {
-		word-break: break-all;
-	}
 	
+}
+/* 글자 밖으로 나가는 현상 방지 */
+.contents-menu .description {
+	word-break: break-all;
 }
 
 /* 지식 iN */
@@ -141,16 +142,22 @@
 	font-size: medium;
 }
 
-/* 블로그 */
-.blog a {
+/* 블로그, 카페 */
+.card a {
 	color: black;
 }
 
-.blog-body p a {
+.card-body p a {
 	font-size: larger;
 }
 
-.blog-body hr {
+.card-body hr {
 	background-color: #5cb85c;
 	border: 1px solid #5cb85c;
+}
+
+/* 이미지 */
+.image-card .thumbnail:hover {
+	background-color: #81c147;
+	color: white;
 }

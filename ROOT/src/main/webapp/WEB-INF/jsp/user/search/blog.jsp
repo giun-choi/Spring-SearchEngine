@@ -5,7 +5,7 @@ $(function() {
 		
 	const api_url = '/search/getBlogList';
 	const params = {
-		query : sessionStorage.getItem('search_word'),
+		query : null,
 		display : null,
 		start : null,
 		sort : null
@@ -25,13 +25,13 @@ $(function() {
 
 function fn_createTag(tagInfo) {
 	
-	return	'<div class="panel panel-success blog">' +	
+	return	'<div class="panel panel-success card">' +	
 				'<div class="panel-heading">' +	
 					'<p><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;<b>' + fn_dateFomat(tagInfo.postdate) + '</b></p>' +					
 					'<span class="glyphicon glyphicon-share-alt"></span>' +					
 					'<a href="' + tagInfo.bloggerlink + '" target="_blank" title="블로그 들어가보기">&nbsp;&nbsp;' + tagInfo.bloggername + '</a>' +					
 				'</div>' +				
-				'<div class="panel-body blog-body">' +			
+				'<div class="panel-body card-body">' +			
 					'<p><a href="' + tagInfo.link + '" target="_blank">' + tagInfo.title + '</a></p>' +			
 					'<hr />' +					
 					'<a href="' + tagInfo.link + '" target="_blank">' +					
@@ -49,8 +49,6 @@ function fn_dateFomat(str) {
     
     return year + '-' + month + '-' + day;
 }
-
-
 </script>
 
 <div class="container contents">
