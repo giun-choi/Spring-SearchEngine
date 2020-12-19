@@ -156,8 +156,4 @@
 	border: 1px solid #5cb85c;
 }
 
-/* 이미지 */
-.image-card .thumbnail:hover {
-	background-color: #81c147;
-	color: white;
-}
+

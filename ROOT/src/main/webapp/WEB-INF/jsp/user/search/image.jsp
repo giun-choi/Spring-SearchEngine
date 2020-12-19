@@ -16,7 +16,7 @@ $(function() {
 			
 	fn_requestSearchData(api_url, params, function(data) {
 		
- 		//$('#contents-menu').html('');
+ 		$('#contents-menu').html('');
  		$.each(data.imageList, function(index, item) {
 			
  			$('#contents-menu').append(fn_createTag(item));

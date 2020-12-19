@@ -48,16 +48,7 @@ function fn_createTag(tagInfo) {
 			<!-- 로고 밑에 공백 -->
 		</div>
 		<div id="contents-menu" class="col-sm-6 contents-menu">
-			<div class="media">
-				<div class="media-left media-middle">
-					<a href="#">
-						<img class="media-object" src="https://phinf.pstatic.net/tvcast/20141021_55/KR14455_1413882018493fJF3b_JPEG/33641134469733791A3_muploader_a_480P_854_1024_128_06.jpg?type=f480#480x272#m" alt="...">
-					</a>
-				</div>
-				<div class="media-body">
-					<h4 class="media-heading">Middle aligned media</h4>
-				</div>
-			</div>
+
 		</div>
 	</div>
 </div>
