@@ -2,8 +2,8 @@
 
 const params = {
 	query : null,
-	display : null,
-	start : null,
+	display : 10,
+	start : 1,
 	sort : null,
 	filter : null,
 	d_titl : null,

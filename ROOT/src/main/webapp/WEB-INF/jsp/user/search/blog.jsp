@@ -3,54 +3,30 @@
 <script type="text/javascript">
 $(function() {
 		
+	const api_url = '/search/getBlogList';
 	params.query = '${query}';
 			
-	fn_requestSearchData('/search/getBlogList', params, function(data) {
+	sessionStorage.setItem('api_url', api_url);
+	
+	fn_requestSearchData(api_url, params, function(data) {
+		
+		const list = data.searchList;
+		const total = data.total;
+		if(10 >= total) $('#add-btn').hide();
 		
 		$('#contents-menu').html('');
-		if(data.blogList.length === 0) {
+		if(list === null || list.length === 0) {
 			
+			$('#add-btn').hide();
 			$('#contents-menu').append(fn_noSearchTag('검색결과가 존재하지 않습니다.'));
 			return;
 		}
-		$.each(data.blogList, function(index, item) {
+		$.each(list, function(index, item) {
 			
-			$('#contents-menu').append(fn_createTag(item));
+			$('#contents-menu').append(fn_createBlogTag(item));
 		});
 	});
 });
-
-function fn_createTag(tagInfo) {
-	
-	return	'<div class="panel panel-success card">' +	
-				'<div class="panel-heading">' +	
-					'<p><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;<b>' + fn_dateFomat(tagInfo.postdate) + '</b></p>' +					
-					'<span class="glyphicon glyphicon-share-alt"></span>' +					
-					'<a href="' + tagInfo.bloggerlink + '" target="_blank" title="블로그 들어가보기">&nbsp;&nbsp;' + tagInfo.bloggername + '</a>' +					
-				'</div>' +				
-				'<div class="panel-body card-body">' +			
-					'<p><a href="' + tagInfo.link + '" target="_blank">' + tagInfo.title + '</a></p>' +			
-					'<hr />' +					
-					'<a href="' + tagInfo.link + '" target="_blank">' +					
-						tagInfo.description +					
-					'</a>' +				
-				'</div>' +		
-			'</div>';
-}
-
-function fn_dateFomat(str) {
-	
-    const year = str.substr(0, 4);
-    const month = str.substr(4, 2);
-    const day = str.substr(6, 2);
-    
-    return year + '-' + month + '-' + day;
-}
-
-function fn_noSearchTag(str) {
-	
-	return '<h1>' + str + '</h1>';
-}
 </script>
 
 <div class="container contents">

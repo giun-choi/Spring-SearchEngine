@@ -3,36 +3,31 @@
 <script type="text/javascript">
 $(function() {
 	
+	const api_url = '/search/getKinList';
 	params.query = '${query}';
+	
+	sessionStorage.setItem('api_url', api_url);
 			
-	fn_requestSearchData('/search/getKinList', params, function(data) {
+	fn_requestSearchData(api_url, params, function(data) {
+		
+		const list = data.searchList;
+		const total = data.total;
+		if(10 >= total) $('#add-btn').hide();
 		
 		$('#contents-menu').html('');
-		if(data.kinList.length === 0) {
+		if(list === null || list.length === 0) {
 			
+			$('#add-btn').hide();
 			$('#contents-menu').append(fn_noSearchTag('검색결과가 존재하지 않습니다.'));
 			return;
 		}
-		$.each(data.kinList, function(index, item) {
+		$.each(list, function(index, item) {
 			
-			$('#contents-menu').append(fn_createTag(item));
+			$('#contents-menu').append(fn_createKinTag(item));
 		});
 		
 	});
 });
-
-function fn_createTag(tagInfo) {
-	
-	return	'<div class="panel panel-success">' +
-				'<div class="panel-heading title"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;' + tagInfo.title + '</div>' +
-				'<div class="panel-body description"><a href="' + tagInfo.link + '" target="_blank">' + tagInfo.description + '</a></div>' +
-			'</div>';
-}
-
-function fn_noSearchTag(str) {
-	
-	return '<h1>' + str + '</h1>';
-}
 </script>
 
 <div class="container contents">

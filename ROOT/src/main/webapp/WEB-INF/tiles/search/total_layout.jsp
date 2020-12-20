@@ -29,6 +29,5 @@
 	<tiles:insertAttribute name="header" ignore="true" />
 	<tiles:insertAttribute name="section" ignore="true" />
 	<tiles:insertAttribute name="center" ignore="true" />
-	<tiles:insertAttribute name="footer" ignore="true" />
 </body>
 </html>

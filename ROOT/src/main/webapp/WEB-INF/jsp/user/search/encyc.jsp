@@ -3,46 +3,34 @@
 <script type="text/javascript">
 $(function() {
 		
+	const api_url = '/search/getEncycList';
 	params.query = '${query}';
+	
+	sessionStorage.setItem('api_url', api_url);
 			
-	fn_requestSearchData('/search/getEncycList', params, function(data) {
+	fn_requestSearchData(api_url, params, function(data) {
+		
+		const list = data.searchList;
+		const total = data.total;
+		if(10 >= total) $('#add-btn').hide();
 		
 		$('#contents-menu').html('');
-		if(data.encycList.length === 0) {
+		if(list === null || list.length === 0) {
 			
+			$('#add-btn').hide();
 			$('#contents-menu').append(fn_noSearchTag('검색결과가 존재하지 않습니다.'));
 			return;
 		}
-		$.each(data.encycList, function(index, item) {
+		$.each(list, function(index, item) {
 			
 			if(item.title !== '' && item.description !== '') {
 				
-				$('#contents-menu').append(fn_createTag(item));
+				$('#contents-menu').append(fn_createEncycTag(item));
 			}
 		});
 	});
 	
 });
-
-function fn_createTag(tagInfo) {
-	
-	return	'<div class="panel panel-success card">' +	
-				'<div class="panel-heading">' +	
-					'<span class="glyphicon glyphicon-book"></span>' +					
-					'<a href="' + tagInfo.link + '" target="_blank" title="백과사전 들어가보기">&nbsp;&nbsp;' + tagInfo.title + '</a>' +					
-				'</div>' +				
-				'<div class="panel-body description">' +			
-					'<a href="' + tagInfo.link + '" target="_blank">' +					
-						tagInfo.description +					
-					'</a>' +				
-				'</div>' +		
-			'</div>';
-}
-
-function fn_noSearchTag(str) {
-	
-	return '<h1>' + str + '</h1>';
-}
 </script>
 
 <div class="container contents">

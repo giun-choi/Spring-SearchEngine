@@ -3,62 +3,31 @@
 <script type="text/javascript">
 $(function() {
 		
+	const api_url = '/search/getMovieList';
 	params.query = '${query}';
+	
+	sessionStorage.setItem('api_url', api_url);
 			
-	fn_requestSearchData('/search/getMovieList', params, function(data) {
+	fn_requestSearchData(api_url, params, function(data) {
+		
+		const list = data.searchList;
+		const total = data.total;
+		if(10 >= total) $('#add-btn').hide();
 		
 		$('#contents-menu').html('');
-		
-		if(data.movieList.length === 0) {
+		if(list === null || list.length === 0) {
 			
+			$('#add-btn').hide();
 			$('#contents-menu').append(fn_noSearchTag('검색결과가 존재하지 않습니다.'));
 			return;
 		}
-		$.each(data.movieList, function(index, item) {
+		$.each(list, function(index, item) {
 			
-			$('#contents-menu').append(fn_createTag(item));
+			$('#contents-menu').append(fn_createMovieTag(item));
 		});
 	});
 	
 });
-
-function fn_createTag(tagInfo) {
-	
-	let _director = tagInfo.director;
-	let _actor = tagInfo.actor;
-	let _userRating = tagInfo.userRating;
-	
-	if(_director !== '') _director = '<p style="margin-top: 5px;"><b>감독</b> : ' + fn_trimLastChar(tagInfo.director) + '</p>';
-	if(_actor !== '') _actor = '<p style="margin-top: 5px;"><b>배우</b> : ' + fn_trimLastChar(tagInfo.actor) + '</p>';
-	if(_userRating !== '') _userRating = '<p style="margin-top: 5px;"><b>평점</b> : ' + tagInfo.userRating + '</p>';	
-	
-	const _image = (tagInfo.image !== '' ? tagInfo.image : '/resources/img/no_image.png');
-	
-	return	'<div class="media" style="border: 1px solid #5cb85c; padding: 5px; border-radius: 5px;">' +
-				'<div class="media-left">' +
-					'<a href="' + tagInfo.link + '">' +
-						'<img class="media-object" src="' + _image + '" alt="...">' +
-					'</a>' +
-				'</div>' +
-				'<div class="media-body">' +
-					'<p><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;' + tagInfo.pubDate + '</p>' +
-					'<p><b>영화 제목 : </b>' + tagInfo.title + '</p>' +
-					_director +
-					_actor +
-					_userRating +
-				'</div>' +
-			'</div>';
-}
-
-function fn_trimLastChar(str) {
-	
-	return str.substring(0, str.length-1);
-}
-
-function fn_noSearchTag(str) {
-	
-	return '<h1>' + str + '</h1>';
-}
 </script>
 
 <div class="container contents">

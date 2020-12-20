@@ -3,42 +3,32 @@
 <script type="text/javascript">
 $(function() {
 		
+	const api_url = '/search/getImageList';
 	params.query = '${query}';
+	
+	sessionStorage.setItem('api_url', api_url);
 			
-	fn_requestSearchData('/search/getImageList', params, function(data) {
+	fn_requestSearchData(api_url, params, function(data) {
+		
+		const list = data.searchList;
+		const total = data.total;
+		if(10 >= total) $('#add-btn').hide();
 		
  		$('#contents-menu').html('');
-		if(data.imageList.length === 0) {
+		if(list === null || list.length === 0) {
 			
+			$('#add-btn').hide();
 			$('#contents-menu').append(fn_noSearchTag('검색결과가 존재하지 않습니다.'));
 			return;
 		}
- 		$.each(data.imageList, function(index, item) {
+ 		$.each(list, function(index, item) {
 			
- 			$('#contents-menu').append(fn_createTag(item));
+ 			$('#contents-menu').append(fn_createImageTag(item));
  		});
 		
 	});
 	
 });
-
-function fn_createTag(tagInfo) {
-	
-	return	'<div class="col-sm-6 col-sm-6 image-card">' +
-				'<div class="thumbnail">' +
-					'<a href="' + tagInfo.link + '" target="_blank">' +
-						'<img src="' + tagInfo.thumbnail + '" alt="썸네일">' +
-					'</a>' +
-					'<p class="text-center" style="margin-top: 10px;">' + tagInfo.sizewidth + ' X ' + tagInfo.sizeheight + '</p>' +
-					'<p class="text-center">' + tagInfo.title + '</p>' +
-				'</div>' +
-			'</div>';
-}
-
-function fn_noSearchTag(str) {
-	
-	return '<h1>' + str + '</h1>';
-}
 </script>
 
 <div class="container contents">

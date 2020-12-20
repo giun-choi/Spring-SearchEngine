@@ -11,7 +11,7 @@
 	</definition>
 
 	<!-- 전체 페이지 -->
-	<definition name="user/search/integrated" extends="searchForm">
+	<definition name="user/search/integrated" extends="totalForm">
 	    <put-attribute name="center" value="/WEB-INF/jsp/user/search/integrated.jsp" />
 	</definition>
 	

@@ -4,3 +4,5 @@
 	<script type="text/javascript" src="/resources/js/bootstrap-3.3.0/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/resources/js/common/search.js"></script>
 	<script type="text/javascript" src="/resources/js/common/searchVO.js"></script>
+	<script type="text/javascript" src="/resources/js/common/utils.js"></script>
+	<script type="text/javascript" src="/resources/js/common/tagCreation.js"></script>

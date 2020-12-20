@@ -3,40 +3,31 @@
 <script type="text/javascript">
 $(function() {
 		
+	const api_url = '/search/getBookList';
 	params.query = '${query}';
 			
-	fn_requestSearchData('/search/getBookList', params, function(data) {
+	sessionStorage.setItem('api_url', api_url);
+	
+	fn_requestSearchData(api_url, params, function(data) {
+		
+		const list = data.searchList;
+		const total = data.total;
+		if(10 >= total) $('#add-btn').hide();
 		
 		$('#contents-menu').html('');
-		if(data.bookList.length === 0) {
+		if(list === null || list.length === 0) {
 			
+			$('#add-btn').hide();
 			$('#contents-menu').append(fn_noSearchTag('검색결과가 존재하지 않습니다.'));
 			return;
 		}
-		$.each(data.bookList, function(index, item) {
+		$.each(list, function(index, item) {
 			
-			$('#contents-menu').append(fn_createTag(item));
+			$('#contents-menu').append(fn_createBookTag(item));
 		});
 	});
 	
 });
-
-function fn_createTag(tagInfo) {
-	
-	return	'<div class="media" style="border: 1px solid #5cb85c; padding: 5px; border-radius: 5px;">' +					
-				'<div class="media-left">' +								
-					'<a href="' + tagInfo.link + '">' +									
-						'<img class="media-object" src="' + tagInfo.image + '" alt="책 이미지">' +										
-					'</a>' +									
-				'</div>' +								
-				'<div class="media-body">' +								
-					'<p><b>책 제목 : </b>' + tagInfo.title + '</p>'	 +								
-					'<p><b>저자 : </b>' + tagInfo.author + '</p>' +									
-					'<p><b>출판 : </b>' + tagInfo.publisher + '&nbsp;&nbsp;|&nbsp;&nbsp;' + fn_dateFomat(tagInfo.pubdate) + '</p>' +									
-				'</div>' +								
-				'<p style="margin-top: 5px;">학업에서 취업까지, 힘들이지 않고 해결하는‘<b>그물망 공부법</b>’으로 갈아타라!세계가 모셔 가는 인재로 만들어주는『<b>그물망 공부법</b>』. 이 책은 NYU 스턴 비즈니스 스쿨에서 에콜 뒤 루브르까지 조승연이 공부의 길에서 보고 겪은 글로벌 3%인재들의 현장보고서다. 베스트셀러 &lt;공부기술&gt;의 저자 조승연이... </p>' +								
-			'</div>';					
-}
 
 function fn_dateFomat(str) {
 	
@@ -45,11 +36,6 @@ function fn_dateFomat(str) {
     const day = str.substr(6, 2);
     
     return year + '-' + month + '-' + day;
-}
-
-function fn_noSearchTag(str) {
-	
-	return '<h1>' + str + '</h1>';
 }
 </script>
 

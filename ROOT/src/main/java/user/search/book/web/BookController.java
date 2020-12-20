@@ -47,7 +47,9 @@ public class BookController {
 		JSONParser parser = new JSONParser();
 		JSONObject json = (JSONObject)parser.parse(searchInfo);
 		
-		mv.addObject("bookList", json.get("items"));
+		mv.addObject("searchList", json.get("items"));
+		mv.addObject("total", json.get("total"));
+		mv.addObject("display", json.get("display"));
 		mv.setViewName("JsonView");
 		
 		return mv;		
