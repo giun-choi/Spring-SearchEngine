@@ -3,21 +3,17 @@
 <script type="text/javascript">
 $(function() {
 	
-	const api_url = '/search/getKinList';
-	const params = {
-		query : null,
-		display : null,
-		start : null,
-		sort : null
-	};
-		
 	params.query = '${query}';
 			
-	fn_requestSearchData(api_url, params, function(data) {
+	fn_requestSearchData('/search/getKinList', params, function(data) {
 		
-		const list = data.kinList;
 		$('#contents-menu').html('');
-		$.each(list, function(index, item) {
+		if(data.kinList.length === 0) {
+			
+			$('#contents-menu').append(fn_noSearchTag('검색결과가 존재하지 않습니다.'));
+			return;
+		}
+		$.each(data.kinList, function(index, item) {
 			
 			$('#contents-menu').append(fn_createTag(item));
 		});
@@ -31,6 +27,11 @@ function fn_createTag(tagInfo) {
 				'<div class="panel-heading title"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;' + tagInfo.title + '</div>' +
 				'<div class="panel-body description"><a href="' + tagInfo.link + '" target="_blank">' + tagInfo.description + '</a></div>' +
 			'</div>';
+}
+
+function fn_noSearchTag(str) {
+	
+	return '<h1>' + str + '</h1>';
 }
 </script>
 

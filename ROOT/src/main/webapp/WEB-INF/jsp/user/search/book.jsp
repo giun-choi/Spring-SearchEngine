@@ -3,27 +3,16 @@
 <script type="text/javascript">
 $(function() {
 		
-	const api_url = '/search/getBookList';
-	const params = {
-		query : null,
-		display : null,
-		start : null,
-		sort : null,
-		d_titl : null,
-		d_auth : null,
-		d_cont : null,
-		d_isbn : null,
-		d_publ : null,
-		d_dafr : null,
-		d_dato : null,
-		d_catg : null
-	};
-	
 	params.query = '${query}';
 			
-	fn_requestSearchData(api_url, params, function(data) {
+	fn_requestSearchData('/search/getBookList', params, function(data) {
 		
 		$('#contents-menu').html('');
+		if(data.bookList.length === 0) {
+			
+			$('#contents-menu').append(fn_noSearchTag('검색결과가 존재하지 않습니다.'));
+			return;
+		}
 		$.each(data.bookList, function(index, item) {
 			
 			$('#contents-menu').append(fn_createTag(item));
@@ -34,7 +23,7 @@ $(function() {
 
 function fn_createTag(tagInfo) {
 	
-	return	'<div class="media" style="border: 2px solid #5cb85c; padding: 5px; border-radius: 5px;">' +					
+	return	'<div class="media" style="border: 1px solid #5cb85c; padding: 5px; border-radius: 5px;">' +					
 				'<div class="media-left">' +								
 					'<a href="' + tagInfo.link + '">' +									
 						'<img class="media-object" src="' + tagInfo.image + '" alt="책 이미지">' +										
@@ -56,6 +45,11 @@ function fn_dateFomat(str) {
     const day = str.substr(6, 2);
     
     return year + '-' + month + '-' + day;
+}
+
+function fn_noSearchTag(str) {
+	
+	return '<h1>' + str + '</h1>';
 }
 </script>
 

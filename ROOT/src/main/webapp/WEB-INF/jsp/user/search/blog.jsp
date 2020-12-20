@@ -3,19 +3,16 @@
 <script type="text/javascript">
 $(function() {
 		
-	const api_url = '/search/getBlogList';
-	const params = {
-		query : null,
-		display : null,
-		start : null,
-		sort : null
-	};
-	
 	params.query = '${query}';
 			
-	fn_requestSearchData(api_url, params, function(data) {
+	fn_requestSearchData('/search/getBlogList', params, function(data) {
 		
 		$('#contents-menu').html('');
+		if(data.blogList.length === 0) {
+			
+			$('#contents-menu').append(fn_noSearchTag('검색결과가 존재하지 않습니다.'));
+			return;
+		}
 		$.each(data.blogList, function(index, item) {
 			
 			$('#contents-menu').append(fn_createTag(item));
@@ -49,6 +46,11 @@ function fn_dateFomat(str) {
     
     return year + '-' + month + '-' + day;
 }
+
+function fn_noSearchTag(str) {
+	
+	return '<h1>' + str + '</h1>';
+}
 </script>
 
 <div class="container contents">
@@ -57,7 +59,7 @@ function fn_dateFomat(str) {
 			<!-- 로고 밑에 공백 -->
 		</div>
 		<div id="contents-menu" class="col-sm-6 contents-menu">
-			<!-- 블로그 검색 내용 -->
+
 		</div>
 	</div>
 </div>

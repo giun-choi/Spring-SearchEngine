@@ -3,26 +3,20 @@
 <script type="text/javascript">
 $(function() {
 		
-	const api_url = '/search/getMovieList';
-	const params = {
-		query : null,
-		display : null,
-		start : null,
-		genre : null,
-		country : null,
-		yearfrom : null,
-		yearto : null
-	};
-	
 	params.query = '${query}';
 			
-	fn_requestSearchData(api_url, params, function(data) {
+	fn_requestSearchData('/search/getMovieList', params, function(data) {
 		
 		$('#contents-menu').html('');
+		
+		if(data.movieList.length === 0) {
+			
+			$('#contents-menu').append(fn_noSearchTag('검색결과가 존재하지 않습니다.'));
+			return;
+		}
 		$.each(data.movieList, function(index, item) {
 			
 			$('#contents-menu').append(fn_createTag(item));
-			console.log(item);
 		});
 	});
 	
@@ -40,7 +34,7 @@ function fn_createTag(tagInfo) {
 	
 	const _image = (tagInfo.image !== '' ? tagInfo.image : '/resources/img/no_image.png');
 	
-	return	'<div class="media" style="border: 2px solid #5cb85c; padding: 5px; border-radius: 5px;">' +
+	return	'<div class="media" style="border: 1px solid #5cb85c; padding: 5px; border-radius: 5px;">' +
 				'<div class="media-left">' +
 					'<a href="' + tagInfo.link + '">' +
 						'<img class="media-object" src="' + _image + '" alt="...">' +
@@ -60,6 +54,11 @@ function fn_trimLastChar(str) {
 	
 	return str.substring(0, str.length-1);
 }
+
+function fn_noSearchTag(str) {
+	
+	return '<h1>' + str + '</h1>';
+}
 </script>
 
 <div class="container contents">
@@ -68,7 +67,7 @@ function fn_trimLastChar(str) {
 			<!-- 로고 밑에 공백 -->
 		</div>
 		<div id="contents-menu" class="col-sm-6 contents-menu">
-	
+			
 		</div>
 	</div>
 </div>

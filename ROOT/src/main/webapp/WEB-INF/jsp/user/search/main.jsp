@@ -23,7 +23,7 @@ function fn_search() {
 		
 	const query = $('#search-box').val();
 	if(fn_queryCheck(query)) return;
-	window.location.href = '/search/kin' + '?query=' + query;
+	window.location.href = '/search/integrated' + '?query=' + query;
 }
 
 function fn_queryCheck(query) {

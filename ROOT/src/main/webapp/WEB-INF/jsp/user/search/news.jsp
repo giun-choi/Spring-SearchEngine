@@ -3,19 +3,16 @@
 <script type="text/javascript">
 $(function() {
 		
-	const api_url = '/search/getNewsList';
-	const params = {
-		query : null,
-		display : null,
-		start : null,
-		sort : null
-	};
-	
 	params.query = '${query}';
 			
-	fn_requestSearchData(api_url, params, function(data) {
+	fn_requestSearchData('/search/getNewsList', params, function(data) {
 		
 		$('#contents-menu').html('');
+		if(data.newsList.length === 0) {
+			
+			$('#contents-menu').append(fn_noSearchTag('검색결과가 존재하지 않습니다.'));
+			return;
+		}
 		$.each(data.newsList, function(index, item) {
 			
 			$('#contents-menu').append(fn_createTag(item));			
@@ -60,6 +57,11 @@ function fn_createTag(tagInfo) {
 					'</a>' +				
 				'</div>' +		
 			'</div>';
+}
+
+function fn_noSearchTag(str) {
+	
+	return '<h1>' + str + '</h1>';
 }
 </script>
 
