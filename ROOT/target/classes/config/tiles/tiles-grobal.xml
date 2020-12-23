@@ -11,7 +11,7 @@
 	</definition>
 
 	<!-- 전체 페이지 -->
-	<definition name="user/search/integrated" extends="totalForm">
+	<definition name="user/search/integrated" extends="noAdditionsForm">
 	    <put-attribute name="center" value="/WEB-INF/jsp/user/search/integrated.jsp" />
 	</definition>
 	
@@ -56,7 +56,7 @@
 	</definition>
 	
 	<!-- 지역 페이지 -->
-	<definition name="user/search/local" extends="searchForm">
+	<definition name="user/search/local" extends="noAdditionsForm">
 	    <put-attribute name="center" value="/WEB-INF/jsp/user/search/local.jsp" />
 	</definition>
 	

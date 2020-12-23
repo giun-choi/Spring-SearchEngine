@@ -10,7 +10,7 @@
 	</definition>
 	
 	<!-- 전체 페이지 -->
-	<definition name="totalForm" template="/WEB-INF/tiles/search/total_layout.jsp">
+	<definition name="noAdditionsForm" template="/WEB-INF/tiles/search/noAdditions_layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/tiles/search/header.jsp" />
 		<put-attribute name="section" value="/WEB-INF/tiles/search/section.jsp" />
 	    <put-attribute name="center" value="" />

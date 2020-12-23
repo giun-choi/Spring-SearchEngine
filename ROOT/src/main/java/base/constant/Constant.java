@@ -12,7 +12,6 @@ public class Constant {
 	public static String Encyc_API_URL = "https://openapi.naver.com/v1/search/encyc"; //백과사전 검색 API
 	public static String CafeArticle_API_URL = "https://openapi.naver.com/v1/search/cafearticle"; //카페글 검색 API
 	public static String Kin_API_URL = "https://openapi.naver.com/v1/search/kin"; //지식 iN 검색 API
-	public static String LOCAL_API_URL = "https://openapi.naver.com/v1/search/local"; //지역 검색 API
 	public static String WEBKR_API_URL = "https://openapi.naver.com/v1/search/webkr"; //웹문서 검색 API
 	public static String IMAGE_API_URL = "https://openapi.naver.com/v1/search/image"; //이미지 검색 API
 	public static String DOC_API_URL = "https://openapi.naver.com/v1/search/doc"; //전문자료 검색 API

@@ -82,7 +82,6 @@ function fn_tagList(selector) {
 					<ul class="dropdown-menu" role="menu">
 						<li class="page" role="presentation" data-page="book"><a>책</a></li>
 						<li class="page" role="presentation" data-page="movie"><a>영화</a></li>
-						<li class="page" role="presentation" data-page="local"><a>지역</a></li>
 						<li class="page" role="presentation" data-page="encyc"><a>백과사전</a></li>
 						<li class="page" role="presentation" data-page="webkr"><a>웹문서</a></li>
 						<li class="page" role="presentation" data-page="doc"><a>전문자료</a></li>
@@ -100,7 +99,6 @@ function fn_tagList(selector) {
 				<li class="page" role="presentation" data-page="news"><a>뉴스</a></li>
 				<li class="page" role="presentation" data-page="book"><a>책</a></li>
 				<li class="page" role="presentation" data-page="movie"><a>영화</a></li>
-				<li class="page" role="presentation" data-page="local"><a>지역</a></li>
 				<li class="page" role="presentation" data-page="encyc"><a>백과사전</a></li>
 				<li class="page" role="presentation" data-page="webkr"><a>웹문서</a></li>
 				<li class="page" role="presentation" data-page="doc"><a>전문자료</a></li>

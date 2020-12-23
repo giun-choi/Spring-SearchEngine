@@ -5,6 +5,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="/resources/img/favicon.ico">
+	<link rel="icon" href="/resources/img/favicon.ico">
 	<%@ include file="/WEB-INF/jsplink/cssSearchLink.jsp"%>
 	<%@ include file="/WEB-INF/jsplink/jsLink.jsp"%>
 	<title>WOONI 검색</title>
