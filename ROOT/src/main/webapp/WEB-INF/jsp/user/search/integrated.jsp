@@ -7,7 +7,7 @@ $(function() {
 	params.query = '${query}';
 
 	/* 지식 iN */
-	fn_requestSearchData('/search/getKinList', params, function(data) {
+	XHR('/search/getKinList', params, function(data) {
 
 		list = data.searchList;
 		
@@ -25,7 +25,7 @@ $(function() {
 	});	
 	
 	/* 블로그 */
-	fn_requestSearchData('/search/getBlogList', params, function(data) {
+	XHR('/search/getBlogList', params, function(data) {
 
 		list = data.searchList;
 		
@@ -44,7 +44,7 @@ $(function() {
 	});	
 	
 	/* 카페글 */
-	fn_requestSearchData('/search/getCafeArticleList', params, function(data) {
+	XHR('/search/getCafeArticleList', params, function(data) {
 
 		list = data.searchList;
 		
@@ -62,7 +62,7 @@ $(function() {
 	});	
 	
 	/* 뉴스 */
-	fn_requestSearchData('/search/getNewsList', params, function(data) {
+	XHR('/search/getNewsList', params, function(data) {
 
 		list = data.searchList;
 		
@@ -80,7 +80,7 @@ $(function() {
 	});	
 	
 	/* 이미지 */
-	fn_requestSearchData('/search/getImageList', params, function(data) {
+	XHR('/search/getImageList', params, function(data) {
 
 		list = data.searchList;
 		

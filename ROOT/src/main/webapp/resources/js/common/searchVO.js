@@ -1,6 +1,7 @@
 'use strict';
 
 const params = {
+
 	query : null,
 	display : 10,
 	start : 1,
@@ -18,4 +19,12 @@ const params = {
 	country : null,
 	yearfrom : null,
 	yearto : null
-};
+}
+
+const clientInfo = {
+	
+	client_ip : null,
+	menu : null,
+	search_word : null,
+	click_link : null
+}

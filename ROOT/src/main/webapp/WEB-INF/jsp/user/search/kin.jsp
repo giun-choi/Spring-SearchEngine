@@ -8,7 +8,7 @@ $(function() {
 	
 	sessionStorage.setItem('api_url', api_url);
 			
-	fn_requestSearchData(api_url, params, function(data) {
+	XHR(api_url, params, function(data) {
 		
 		const list = data.searchList;
 		const total = data.total;
@@ -27,6 +27,7 @@ $(function() {
 		});
 		
 	});
+	
 });
 </script>
 

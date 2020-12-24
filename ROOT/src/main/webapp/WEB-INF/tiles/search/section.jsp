@@ -11,6 +11,23 @@ $(function() {
 	
 	fn_pcSelectMenu('${page}', '.p-menu-tab li');
 	fn_mobileSelectMenu('${page}', '.m-menu-tab li');
+	
+	clientInfo.client_ip = ip();
+	clientInfo.menu = '${page}';
+	clientInfo.search_word = '${query}';
+	XHR('/client/setSearchInfo', clientInfo, function(data) {
+		
+		console.log(data.result);
+	});
+	
+	$(document).on('click', '.link', function(event) {
+		
+		clientInfo.click_link = $(event.currentTarget).attr('href');
+		XHR('/client/setClickInfo', clientInfo, function(data) {
+		
+			console.log(data.result);
+		});
+	});
 });
 
 function fn_pcSelectMenu(page, selector) {

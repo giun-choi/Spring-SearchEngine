@@ -50,12 +50,12 @@ function fn_createBlogTag(tagInfo) {
 				'<div class="panel-heading">' +	
 					'<p><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;<b>' + fn_dateFomat(tagInfo.postdate) + '</b></p>' +					
 					'<span class="glyphicon glyphicon-share-alt"></span>' +					
-					'<a href="' + tagInfo.bloggerlink + '" target="_blank" title="블로그 들어가보기">&nbsp;&nbsp;' + tagInfo.bloggername + '</a>' +					
+					'<a class="link" href="' + tagInfo.bloggerlink + '" target="_blank" title="블로그 들어가보기">&nbsp;&nbsp;' + tagInfo.bloggername + '</a>' +					
 				'</div>' +				
 				'<div class="panel-body card-body">' +			
-					'<p><a href="' + tagInfo.link + '" target="_blank">' + tagInfo.title + '</a></p>' +			
+					'<p><a class="link" href="' + tagInfo.link + '" target="_blank">' + tagInfo.title + '</a></p>' +			
 					'<hr />' +					
-					'<a href="' + tagInfo.link + '" target="_blank">' +					
+					'<a class="link" href="' + tagInfo.link + '" target="_blank">' +					
 						tagInfo.description +					
 					'</a>' +				
 				'</div>' +		
@@ -67,7 +67,7 @@ function fn_createBookTag(tagInfo) {
 	
 	return	'<div class="media" style="border: 1px solid #5cb85c; padding: 5px; border-radius: 5px;">' +					
 				'<div class="media-left">' +								
-					'<a href="' + tagInfo.link + '">' +									
+					'<a class="link" href="' + tagInfo.link + '" target="_blank">' +									
 						'<img class="media-object" src="' + tagInfo.image + '" alt="책 이미지">' +										
 					'</a>' +									
 				'</div>' +								
@@ -86,12 +86,12 @@ function fn_createCafeTag(tagInfo) {
 	return	'<div class="panel panel-success card">' +	
 				'<div class="panel-heading">' +	
 					'<span class="glyphicon glyphicon-share-alt"></span>' +					
-					'<a href="' + tagInfo.cafeurl + '" target="_blank" title="카페 들어가보기">&nbsp;&nbsp;' + tagInfo.cafename + '</a>' +					
+					'<a class="link" href="' + tagInfo.cafeurl + '" target="_blank" title="카페 들어가보기">&nbsp;&nbsp;' + tagInfo.cafename + '</a>' +					
 				'</div>' +				
 				'<div class="panel-body card-body">' +			
 					'<p><a href="' + tagInfo.link + '" target="_blank">' + tagInfo.title + '</a></p>' +			
 					'<hr />' +					
-					'<a href="' + tagInfo.link + '" target="_blank">' +					
+					'<a class="link" href="' + tagInfo.link + '" target="_blank">' +					
 						tagInfo.description +					
 					'</a>' +				
 				'</div>' +		
@@ -104,10 +104,10 @@ function fn_createDocTag(tagInfo) {
 	return	'<div class="panel panel-success card">' +	
 				'<div class="panel-heading">' +	
 					'<span class="glyphicon glyphicon-bookmark"></span>' +					
-					'<a href="' + tagInfo.link + '" target="_blank" title="문서 들어가보기">&nbsp;&nbsp;' + tagInfo.title + '</a>' +					
+					'<a class="link" href="' + tagInfo.link + '" target="_blank" title="문서 들어가보기">&nbsp;&nbsp;' + tagInfo.title + '</a>' +					
 				'</div>' +				
 				'<div class="panel-body description">' +			
-					'<a href="' + tagInfo.link + '" target="_blank">' +					
+					'<a class="link" href="' + tagInfo.link + '" target="_blank">' +					
 						tagInfo.description +					
 					'</a>' +				
 				'</div>' +		
@@ -120,10 +120,10 @@ function fn_createEncycTag(tagInfo) {
 	return	'<div class="panel panel-success card">' +	
 				'<div class="panel-heading">' +	
 					'<span class="glyphicon glyphicon-book"></span>' +					
-					'<a href="' + tagInfo.link + '" target="_blank" title="백과사전 들어가보기">&nbsp;&nbsp;' + tagInfo.title + '</a>' +					
+					'<a class="link" href="' + tagInfo.link + '" target="_blank" title="백과사전 들어가보기">&nbsp;&nbsp;' + tagInfo.title + '</a>' +					
 				'</div>' +				
 				'<div class="panel-body description">' +			
-					'<a href="' + tagInfo.link + '" target="_blank">' +					
+					'<a class="link" href="' + tagInfo.link + '" target="_blank">' +					
 						tagInfo.description +					
 					'</a>' +				
 				'</div>' +		
@@ -135,7 +135,7 @@ function fn_createImageTag(tagInfo) {
 	
 	return	'<div class="col-sm-6 col-sm-6 image-card">' +
 				'<div class="thumbnail">' +
-					'<a href="' + tagInfo.link + '" target="_blank">' +
+					'<a class="link" href="' + tagInfo.link + '" target="_blank">' +
 						'<img src="' + tagInfo.thumbnail + '" alt="썸네일">' +
 					'</a>' +
 					'<p class="text-center" style="margin-top: 10px;">' + tagInfo.sizewidth + ' X ' + tagInfo.sizeheight + '</p>' +
@@ -149,7 +149,7 @@ function fn_createKinTag(tagInfo) {
 	
 	return	'<div class="panel panel-success">' +
 				'<div class="panel-heading title"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;' + tagInfo.title + '</div>' +
-				'<div class="panel-body description"><a href="' + tagInfo.link + '" target="_blank">' + tagInfo.description + '</a></div>' +
+				'<div class="panel-body description"><a class="link" href="' + tagInfo.link + '" target="_blank">' + tagInfo.description + '</a></div>' +
 			'</div>';
 }
 
@@ -168,7 +168,7 @@ function fn_createMovieTag(tagInfo) {
 	
 	return	'<div class="media" style="border: 1px solid #5cb85c; padding: 5px; border-radius: 5px;">' +
 				'<div class="media-left">' +
-					'<a href="' + tagInfo.link + '">' +
+					'<a class="link" href="' + tagInfo.link + '" target="_blank">' +
 						'<img class="media-object" src="' + _image + '" alt="...">' +
 					'</a>' +
 				'</div>' +
@@ -191,9 +191,9 @@ function fn_createNewsTag(tagInfo) {
 					'<span>&nbsp;&nbsp;' + fn_dateToStr(new Date(tagInfo.pubDate)) + '</span>' +
 				'</div>' +				
 				'<div class="panel-body card-body">' +			
-					'<p><a href="' + tagInfo.link + '" target="_blank">' + tagInfo.title + '</a></p>' +			
+					'<p><a class="link" href="' + tagInfo.link + '" target="_blank">' + tagInfo.title + '</a></p>' +			
 					'<hr />' +					
-					'<a href="' + tagInfo.originallink + '" target="_blank">' +					
+					'<a class="link" href="' + tagInfo.originallink + '" target="_blank">' +					
 						tagInfo.description +					
 					'</a>' +				
 				'</div>' +		
@@ -206,10 +206,10 @@ function fn_createWebkrTag(tagInfo) {
 	return	'<div class="panel panel-success card">' +	
 				'<div class="panel-heading">' +	
 					'<span class="glyphicon glyphicon-file"></span>' +					
-					'<a href="' + tagInfo.link + '" target="_blank" title="문서 들어가보기">&nbsp;&nbsp;' + tagInfo.title + '</a>' +					
+					'<a class="link" href="' + tagInfo.link + '" target="_blank" title="문서 들어가보기">&nbsp;&nbsp;' + tagInfo.title + '</a>' +					
 				'</div>' +				
 				'<div class="panel-body description">' +			
-					'<a href="' + tagInfo.link + '" target="_blank">' +					
+					'<a class="link" href="' + tagInfo.link + '" target="_blank">' +					
 						tagInfo.description +					
 					'</a>' +				
 				'</div>' +		

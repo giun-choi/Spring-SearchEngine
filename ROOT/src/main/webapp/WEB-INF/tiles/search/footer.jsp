@@ -3,8 +3,6 @@
 <script type="text/javascript">
 $(function() {
 	
-	
-	
 	$('#add-btn').click(function() {
 		
 		const page = '${page}';
@@ -12,7 +10,7 @@ $(function() {
 		
 		params.start = (params.start + params.display);
 		
-		fn_requestSearchData(api_url, params, function(data) {
+		XHR(api_url, params, function(data) {
 			
 			const total = data.total;
 			const display = data.display;
@@ -25,6 +23,7 @@ $(function() {
 			
 		});
 	});
+	
 });
 </script>
 
