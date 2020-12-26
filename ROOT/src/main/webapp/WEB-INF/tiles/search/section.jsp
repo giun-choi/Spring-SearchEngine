@@ -3,6 +3,10 @@
 <script type="text/javascript">
 $(function() {
 	
+	String.prototype.replaceAll = function(org, dest) {
+	    return this.split(org).join(dest);
+	}
+	
 	$('.page').click(function(event) {
 		
 		const selectedPage = $(event.currentTarget).data('page');
@@ -12,9 +16,8 @@ $(function() {
 	fn_pcSelectMenu('${page}', '.p-menu-tab li');
 	fn_mobileSelectMenu('${page}', '.m-menu-tab li');
 	
-	clientInfo.client_ip = ip();
 	clientInfo.menu = '${page}';
-	clientInfo.search_word = '${query}';
+	clientInfo.search_word = '${query}'.replaceAll('&', '_');
 	XHR('/client/setSearchInfo', clientInfo, function(data) {
 		
 		console.log(data.result);
@@ -22,7 +25,8 @@ $(function() {
 	
 	$(document).on('click', '.link', function(event) {
 		
-		clientInfo.click_link = $(event.currentTarget).attr('href');
+		let link = $(event.currentTarget).attr('href');
+		clientInfo.click_link = link.replaceAll('&', '_');
 		XHR('/client/setClickInfo', clientInfo, function(data) {
 		
 			console.log(data.result);
@@ -77,6 +81,8 @@ function fn_tagList(selector) {
 	});
 	return tagList;
 }
+
+
 </script>
 
 <div class="container section">

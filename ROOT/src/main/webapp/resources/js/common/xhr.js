@@ -7,7 +7,7 @@ function fn_convertToQueryString(obj) {
 	
 	for(const key in obj) {
 		
-		if(obj[key] !== null) {
+		if(obj[key] !== null && obj[key] !== '' && obj[key] !== undefined) {
 			
 			if(flag) {
 				query_string += ( key + '=' + obj[key] );
@@ -44,5 +44,6 @@ function XHR(api_url, params, callback) {
 //        	console.log('fail');
 //        	console.log(f);
         }
+	
 	});
 }

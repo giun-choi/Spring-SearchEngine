@@ -22,7 +22,7 @@ $(function() {
 			if(index > 2) return;
 			$('#kin-body').append(fn_createKinTag(item));
 		});
-	});	
+	});
 	
 	/* 블로그 */
 	XHR('/search/getBlogList', params, function(data) {
@@ -106,7 +106,7 @@ $(function() {
 		</div>
 		<div id="contents-menu" class="col-sm-6 contents-menu">
 			<!-- 지식 iN -->
-			<div class="panel panel-default">
+			<div class="panel panel-success">
 				<div class="panel-heading">
 					<h3 class="panel-title">지식 iN</h3>
 				</div>
@@ -115,7 +115,7 @@ $(function() {
 				</div>
 			</div>
 			<!-- 블로그 -->
-			<div class="panel panel-default">
+			<div class="panel panel-success">
 				<div class="panel-heading">
 					<h3 class="panel-title">블로그</h3>
 				</div>
@@ -124,7 +124,7 @@ $(function() {
 				</div>
 			</div>
 			<!-- 카페글 -->
-			<div class="panel panel-default">
+			<div class="panel panel-success">
 				<div class="panel-heading">
 					<h3 class="panel-title">카페글</h3>
 				</div>
@@ -133,7 +133,7 @@ $(function() {
 				</div>
 			</div>
 			<!-- 뉴스 -->
-			<div class="panel panel-default">
+			<div class="panel panel-success">
 				<div class="panel-heading">
 					<h3 class="panel-title">뉴스</h3>
 				</div>
@@ -142,7 +142,7 @@ $(function() {
 				</div>
 			</div>
 			<!-- 이미지 -->
-			<div class="panel panel-default">
+			<div class="panel panel-success">
 				<div class="panel-heading">
 					<h3 class="panel-title">이미지</h3>
 				</div>

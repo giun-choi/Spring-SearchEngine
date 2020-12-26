@@ -6,4 +6,3 @@
 	<script type="text/javascript" src="/resources/js/common/searchVO.js"></script>
 	<script type="text/javascript" src="/resources/js/common/utils.js"></script>
 	<script type="text/javascript" src="/resources/js/common/tagCreation.js"></script>
-	<script type="text/javascript" src="http://jsgetip.appspot.com"></script>

@@ -46,7 +46,7 @@ function fn_methodSelection(page, tagInfo) {
 //블로그 태그 생성
 function fn_createBlogTag(tagInfo) {
 	
-	return	'<div class="panel panel-success card">' +	
+	return	'<div class="panel panel-default card">' +	
 				'<div class="panel-heading">' +	
 					'<p><span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;<b>' + fn_dateFomat(tagInfo.postdate) + '</b></p>' +					
 					'<span class="glyphicon glyphicon-share-alt"></span>' +					
@@ -83,7 +83,7 @@ function fn_createBookTag(tagInfo) {
 //카페글 태그 생성
 function fn_createCafeTag(tagInfo) {
 	
-	return	'<div class="panel panel-success card">' +	
+	return	'<div class="panel panel-default card">' +	
 				'<div class="panel-heading">' +	
 					'<span class="glyphicon glyphicon-share-alt"></span>' +					
 					'<a class="link" href="' + tagInfo.cafeurl + '" target="_blank" title="카페 들어가보기">&nbsp;&nbsp;' + tagInfo.cafename + '</a>' +					
@@ -101,14 +101,16 @@ function fn_createCafeTag(tagInfo) {
 //전문자료 태그 생성
 function fn_createDocTag(tagInfo) {
 	
-	return	'<div class="panel panel-success card">' +	
+	const _description = (tagInfo.description !== '' ? tagInfo.description : '내용없음');
+	
+	return	'<div class="panel panel-default card">' +	
 				'<div class="panel-heading">' +	
 					'<span class="glyphicon glyphicon-bookmark"></span>' +					
 					'<a class="link" href="' + tagInfo.link + '" target="_blank" title="문서 들어가보기">&nbsp;&nbsp;' + tagInfo.title + '</a>' +					
 				'</div>' +				
 				'<div class="panel-body description">' +			
 					'<a class="link" href="' + tagInfo.link + '" target="_blank">' +					
-						tagInfo.description +					
+						_description +					
 					'</a>' +				
 				'</div>' +		
 			'</div>';
@@ -117,7 +119,7 @@ function fn_createDocTag(tagInfo) {
 //백과사전 태그 생성
 function fn_createEncycTag(tagInfo) {
 	
-	return	'<div class="panel panel-success card">' +	
+	return	'<div class="panel panel-default card">' +	
 				'<div class="panel-heading">' +	
 					'<span class="glyphicon glyphicon-book"></span>' +					
 					'<a class="link" href="' + tagInfo.link + '" target="_blank" title="백과사전 들어가보기">&nbsp;&nbsp;' + tagInfo.title + '</a>' +					
@@ -147,7 +149,7 @@ function fn_createImageTag(tagInfo) {
 //지식iN 태그 생성
 function fn_createKinTag(tagInfo) {
 	
-	return	'<div class="panel panel-success">' +
+	return	'<div class="panel panel-default">' +
 				'<div class="panel-heading title"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;' + tagInfo.title + '</div>' +
 				'<div class="panel-body description"><a class="link" href="' + tagInfo.link + '" target="_blank">' + tagInfo.description + '</a></div>' +
 			'</div>';
@@ -185,7 +187,7 @@ function fn_createMovieTag(tagInfo) {
 //뉴스 태그 생성
 function fn_createNewsTag(tagInfo) {
 	
-	return	'<div class="panel panel-success card">' +	
+	return	'<div class="panel panel-default card">' +	
 				'<div class="panel-heading">' +	
 					'<span class="glyphicon glyphicon-time"></span>' +					
 					'<span>&nbsp;&nbsp;' + fn_dateToStr(new Date(tagInfo.pubDate)) + '</span>' +
@@ -203,7 +205,7 @@ function fn_createNewsTag(tagInfo) {
 //웹문서 태그 생성
 function fn_createWebkrTag(tagInfo) {
 	
-	return	'<div class="panel panel-success card">' +	
+	return	'<div class="panel panel-default card">' +	
 				'<div class="panel-heading">' +	
 					'<span class="glyphicon glyphicon-file"></span>' +					
 					'<a class="link" href="' + tagInfo.link + '" target="_blank" title="문서 들어가보기">&nbsp;&nbsp;' + tagInfo.title + '</a>' +					

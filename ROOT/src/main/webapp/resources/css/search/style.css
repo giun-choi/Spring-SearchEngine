@@ -77,7 +77,7 @@
 }
 
 /* mobile */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
 
 	/* 헤더영역 */
     #adv-search {
@@ -152,8 +152,8 @@
 }
 
 .card-body hr {
-	background-color: #5cb85c;
-	border: 1px solid #5cb85c;
+	background-color: #D8D7D7;
+	border: 1px solid #D8D7D7;
 }
 
 

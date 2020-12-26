@@ -7,39 +7,39 @@
 
 	<!-- 클라이언트 검색정보 저장 -->
 	<insert id="setSearchWord" parameterType="user.search.client.service.ClientVO">
-		INSERT INTO SEARCH_INFO
+		insert into search_info
 	 		(
-	 			CLIENT_IP
-	 			, MENU
-	 			, SEARCH_WORD
-	 			, REG_DATE
+	 			client_ip
+	 			, menu
+	 			, search_word
+	 			, reg_date
 	 		)
- 		VALUES
+ 		values
 	 		(
 	 			#{client_ip}
 	 			, #{menu}
 	 			, #{search_word}
-	 			, NOW()
+	 			, now()
 	 		)
 	</insert>
 	
 	<!-- 클라이언트 클릭정보 저장 -->
 	<insert id="setClickLink" parameterType="user.search.client.service.ClientVO">
-		INSERT INTO CLICK_INFO
+		insert into click_info
 	 		(
-	 			CLIENT_IP
-	 			, MENU
-	 			, SEARCH_WORD
-	 			, CLICK_LINK
-	 			, REG_DATE
+	 			client_ip
+	 			, menu
+	 			, search_word
+	 			, click_link
+	 			, reg_date
 	 		)
- 		VALUES
+ 		values
 	 		(
 	 			#{client_ip}
 	 			, #{menu}
 	 			, #{search_word}
 	 			, #{click_link}
-	 			, NOW()
+	 			, now()
 	 		)
 	</insert>
 	
