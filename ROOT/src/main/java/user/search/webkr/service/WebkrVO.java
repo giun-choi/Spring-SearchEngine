@@ -3,7 +3,9 @@ package user.search.webkr.service;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
-public class WebkrVO {
+import base.utils.customVO;
+
+public class WebkrVO implements customVO {
 
 	private String query;
 	private String display;
@@ -28,6 +30,7 @@ public class WebkrVO {
 		this.start = start;
 	}
 	
+	@Override
 	public HashMap<String, String> getSearchKeywords() {
 		
 		Field[] fields = this.getClass().getDeclaredFields();

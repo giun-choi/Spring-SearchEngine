@@ -3,7 +3,9 @@ package user.search.kin.service;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
-public class KinVO {
+import base.utils.customVO;
+
+public class KinVO implements customVO {
 	
 	private String query;
 	private String display;
@@ -35,6 +37,7 @@ public class KinVO {
 		this.sort = sort;
 	}
 
+	@Override
 	public HashMap<String, String> getSearchKeywords() {
 		
 		Field[] fields = this.getClass().getDeclaredFields();

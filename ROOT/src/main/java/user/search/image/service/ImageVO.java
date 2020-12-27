@@ -3,7 +3,9 @@ package user.search.image.service;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
-public class ImageVO {
+import base.utils.customVO;
+
+public class ImageVO implements customVO {
 
 	private String query;
 	private String display;
@@ -42,6 +44,7 @@ public class ImageVO {
 		this.filter = filter;
 	}
 
+	@Override
 	public HashMap<String, String> getSearchKeywords() {
 		
 		Field[] fields = this.getClass().getDeclaredFields();

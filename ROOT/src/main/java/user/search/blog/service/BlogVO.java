@@ -3,7 +3,9 @@ package user.search.blog.service;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
-public class BlogVO {
+import base.utils.customVO;
+
+public class BlogVO implements customVO {
 
 	private String query;
 	private String display;
@@ -35,6 +37,7 @@ public class BlogVO {
 		this.sort = sort;
 	}
 	
+	@Override
 	public HashMap<String, String> getSearchKeywords() {
 		
 		Field[] fields = this.getClass().getDeclaredFields();

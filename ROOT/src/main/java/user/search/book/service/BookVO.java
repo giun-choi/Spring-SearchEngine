@@ -3,7 +3,9 @@ package user.search.book.service;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
-public class BookVO {
+import base.utils.customVO;
+
+public class BookVO implements customVO {
 
 	private String query;
 	private String display;
@@ -91,6 +93,7 @@ public class BookVO {
 		this.d_catg = d_catg;
 	}
 	
+	@Override
 	public HashMap<String, String> getSearchKeywords() {
 		
 		Field[] fields = this.getClass().getDeclaredFields();

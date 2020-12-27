@@ -3,7 +3,9 @@ package user.search.encyc.service;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
-public class EncycVO {
+import base.utils.customVO;
+
+public class EncycVO implements customVO {
 
 	private String query;
 	private String display;
@@ -28,6 +30,7 @@ public class EncycVO {
 		this.start = start;
 	}
 	
+	@Override
 	public HashMap<String, String> getSearchKeywords() {
 		
 		Field[] fields = this.getClass().getDeclaredFields();

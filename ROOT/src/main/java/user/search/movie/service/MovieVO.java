@@ -3,7 +3,9 @@ package user.search.movie.service;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
-public class MovieVO {
+import base.utils.customVO;
+
+public class MovieVO implements customVO {
 
 	private String query;
 	private String display;
@@ -56,6 +58,7 @@ public class MovieVO {
 		this.yearto = yearto;
 	}
 
+	@Override
 	public HashMap<String, String> getSearchKeywords() {
 		
 		Field[] fields = this.getClass().getDeclaredFields();

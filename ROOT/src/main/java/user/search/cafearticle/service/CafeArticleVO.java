@@ -3,7 +3,9 @@ package user.search.cafearticle.service;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
-public class CafeArticleVO {
+import base.utils.customVO;
+
+public class CafeArticleVO implements customVO {
 
 	public String query;
 	public String display;
@@ -35,6 +37,7 @@ public class CafeArticleVO {
 		this.sort = sort;
 	}
 	
+	@Override
 	public HashMap<String, String> getSearchKeywords() {
 		
 		Field[] fields = this.getClass().getDeclaredFields();
