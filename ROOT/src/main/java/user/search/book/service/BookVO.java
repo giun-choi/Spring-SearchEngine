@@ -109,7 +109,6 @@ public class BookVO implements customVO {
 				e.printStackTrace();
 			}
 		}
-		
 		return query_string;
 	}
 	

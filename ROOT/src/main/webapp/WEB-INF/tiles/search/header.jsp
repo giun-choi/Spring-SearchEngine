@@ -31,7 +31,9 @@ function fn_search() {
 
 function fn_queryCheck(query) {
 	
-	if(query === '' || query === null || query === undefined) {
+	const query_check = query.replaceAll(' ', '');
+	
+	if(query_check === '' || query_check === null || query_check === undefined) {
 		
 		$('.modal').modal('show');
 		return true;

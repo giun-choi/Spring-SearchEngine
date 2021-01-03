@@ -36,3 +36,7 @@ function fn_trimLastChar(str) {
 	
 	return str.substring(0, str.length-1);
 }
+
+String.prototype.replaceAll = function(org, dest) {
+    return this.split(org).join(dest);
+}

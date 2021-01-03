@@ -3,10 +3,6 @@
 <script type="text/javascript">
 $(function() {
 	
-	String.prototype.replaceAll = function(org, dest) {
-	    return this.split(org).join(dest);
-	}
-	
 	$('.page').click(function(event) {
 		
 		const selectedPage = $(event.currentTarget).data('page');
